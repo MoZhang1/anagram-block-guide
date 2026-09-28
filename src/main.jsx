@@ -31,6 +31,8 @@ import {
   storeFavorites,
 } from "./dex.mjs";
 import { PanelGuide, Modal, SourceLink } from "./PanelGuide.jsx";
+import { DexCover } from "./DexCover.jsx";
+import { COVER_DURATION, initialCoverPhase, nextCoverPhase } from "./cover.mjs";
 import "./styles.css";
 
 const assetUrl = (path) => import.meta.env.BASE_URL + path;
@@ -408,6 +410,14 @@ function About({ close }) {
 }
 
 function App() {
+  const [phase, setPhase] = useState(() =>
+    initialCoverPhase(initial, dexNumbers),
+  );
+  const phaseRef = useRef(phase);
+  const transitionTimer = useRef(null);
+  const coverButtonRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const focusAfterTransition = useRef(false);
   const [state, setState] = useState({
     ...initial,
     id: initial.id || data.blocks[0].id,
@@ -424,6 +434,39 @@ function App() {
   const [about, setAbout] = useState(false);
   const [storageNote, setStorageNote] = useState("");
   const searchRef = useRef(null);
+  function changeCover(action) {
+    const next = nextCoverPhase(
+      phaseRef.current,
+      action,
+      matchMedia("(prefers-reduced-motion: reduce)").matches,
+    );
+    if (next === phaseRef.current) return;
+    focusAfterTransition.current = true;
+    phaseRef.current = next;
+    setPhase(next);
+    setAbout(false);
+    if (action === "close")
+      history.replaceState(null, "", location.pathname + location.search);
+    window.scrollTo({ top: 0, behavior: "instant" });
+    clearTimeout(transitionTimer.current);
+    if (next === "opening" || next === "closing") {
+      transitionTimer.current = setTimeout(() => {
+        const finished = nextCoverPhase(phaseRef.current, "finish");
+        phaseRef.current = finished;
+        setPhase(finished);
+      }, COVER_DURATION);
+    }
+  }
+  useEffect(() => () => clearTimeout(transitionTimer.current), []);
+  useEffect(() => {
+    if (phase !== "open" && phase !== "closed") return;
+    if (focusAfterTransition.current) {
+      (phase === "open" ? closeButtonRef : coverButtonRef).current?.focus({
+        preventScroll: true,
+      });
+      focusAfterTransition.current = false;
+    }
+  }, [phase]);
   const blocks = useMemo(
     () =>
       filterBlocks(data.blocks, state).filter(
@@ -466,29 +509,36 @@ function App() {
     setStorageNote(saved ? "" : "浏览器未允许保存，收藏仅在本次页面有效。");
   }
   useEffect(() => {
+    if (phase !== "open") return;
     history.replaceState(
       null,
       "",
       writeRoute({ ...state, id: selected?.id || "" }),
     );
-  }, [state, selected?.id]);
+  }, [state, selected?.id, phase]);
   useEffect(() => {
-    document.title = selected
-      ? selected.name + " · Anagram 单块图鉴"
-      : "Anagram 单块图鉴";
-  }, [selected]);
+    document.title =
+      phase === "open" && selected
+        ? selected.name + " · Anagram 单块图鉴"
+        : "Anagram 单块图鉴";
+  }, [selected, phase]);
   useEffect(() => {
     const route = () => {
       const next = readRoute(location.hash);
       setState(next);
       setOnlyFavorites(false);
       setMobileDetail(!!next.id);
+      clearTimeout(transitionTimer.current);
+      const nextPhase = initialCoverPhase(next, dexNumbers);
+      phaseRef.current = nextPhase;
+      setPhase(nextPhase);
     };
     addEventListener("hashchange", route);
     return () => removeEventListener("hashchange", route);
   }, []);
   useEffect(() => {
     const key = (e) => {
+      if (phase !== "open") return;
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
         setMobileDetail(false);
@@ -511,83 +561,107 @@ function App() {
     };
     addEventListener("keydown", key);
     return () => removeEventListener("keydown", key);
-  }, [blocks, selected?.id]);
+  }, [blocks, selected?.id, phase]);
   return (
-    <div className={"pokedex" + (mobileDetail ? " show-detail" : "")}>
-      <section className="shell left-shell" aria-label="图鉴目录">
-        <header className="device-header">
-          <div className="sensor" aria-hidden="true">
-            <i />
-          </div>
-          <div className="indicator-lights" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
-          <div className="header-seam" aria-hidden="true" />
-          <a
-            className="brand"
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              update({ ...resetFilters, id: data.blocks[0].id });
-              setOnlyFavorites(false);
-              back();
-            }}
-          >
-            ANAGRAM 单块图鉴
-          </a>
-        </header>
-        <Directory
-          state={state}
-          update={update}
-          blocks={blocks}
-          selected={selected}
-          choose={choose}
-          searchRef={searchRef}
-          favorites={favorites}
-          onlyFavorites={onlyFavorites}
-          setOnlyFavorites={setOnlyFavorites}
-        />
-        <DeviceKeys
-          navigate={navigate}
-          confirm={() => selected && choose(selected.id)}
-          back={back}
-        />
+    <div
+      className="dex-experience"
+      data-phase={phase}
+      style={{ "--cover-time": `${COVER_DURATION}ms` }}
+    >
+      <div
+        className={"pokedex" + (mobileDetail ? " show-detail" : "")}
+        inert={phase !== "open" ? true : undefined}
+        aria-hidden={phase !== "open" ? true : undefined}
+      >
         <button
-          className="case-screw"
-          aria-label="收录说明"
-          title="收录说明"
-          onClick={() => setAbout(true)}
+          className="dex-close"
+          ref={closeButtonRef}
+          onClick={() => changeCover("close")}
         >
-          +
+          <ChevronLeft size={16} />
+          合上图鉴
         </button>
-      </section>
-      <div className="hinge" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-        <i />
-      </div>
-      <section className="shell right-shell" aria-label="单块详情">
-        <Detail
-          key={selected?.id || "empty"}
-          block={selected}
-          onBack={back}
-          navigate={navigate}
-          favorite={favorites.includes(selected?.id)}
-          toggleFavorite={toggleFavorite}
-          storageNote={storageNote}
-        />
-        <footer className="case-footer">
-          <span className="footer-vents" aria-hidden="true" />
-          <button onClick={() => setAbout(true)}>
-            非官方中文图鉴 · 参数以原始资料为准
+        <section className="shell left-shell" aria-label="图鉴目录">
+          <header className="device-header">
+            <div className="sensor" aria-hidden="true">
+              <i />
+            </div>
+            <div className="indicator-lights" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+            </div>
+            <div className="header-seam" aria-hidden="true" />
+            <a
+              className="brand"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                update({ ...resetFilters, id: data.blocks[0].id });
+                setOnlyFavorites(false);
+                back();
+              }}
+            >
+              ANAGRAM 单块图鉴
+            </a>
+          </header>
+          <Directory
+            state={state}
+            update={update}
+            blocks={blocks}
+            selected={selected}
+            choose={choose}
+            searchRef={searchRef}
+            favorites={favorites}
+            onlyFavorites={onlyFavorites}
+            setOnlyFavorites={setOnlyFavorites}
+          />
+          <DeviceKeys
+            navigate={navigate}
+            confirm={() => selected && choose(selected.id)}
+            back={back}
+          />
+          <button
+            className="case-screw"
+            aria-label="收录说明"
+            title="收录说明"
+            onClick={() => setAbout(true)}
+          >
+            +
           </button>
-          <span className="footer-vents" aria-hidden="true" />
-        </footer>
-      </section>
-      {about && <About close={() => setAbout(false)} />}
+        </section>
+        <div className="hinge" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+          <i />
+        </div>
+        <section className="shell right-shell" aria-label="单块详情">
+          <Detail
+            key={selected?.id || "empty"}
+            block={selected}
+            onBack={back}
+            navigate={navigate}
+            favorite={favorites.includes(selected?.id)}
+            toggleFavorite={toggleFavorite}
+            storageNote={storageNote}
+          />
+          <footer className="case-footer">
+            <span className="footer-vents" aria-hidden="true" />
+            <button onClick={() => setAbout(true)}>
+              非官方中文图鉴 · 参数以原始资料为准
+            </button>
+            <span className="footer-vents" aria-hidden="true" />
+          </footer>
+        </section>
+        {about && <About close={() => setAbout(false)} />}
+      </div>
+      <DexCover
+        phase={phase}
+        open={() => changeCover("open")}
+        buttonRef={coverButtonRef}
+        count={data.blocks.length}
+      />
     </div>
   );
 }

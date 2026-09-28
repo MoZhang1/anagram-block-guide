@@ -1,0 +1,436 @@
+/* Closed state extends the existing scarlet shell, not a separate splash page. */
+.dex-experience {
+  --cover-time: 860ms;
+}
+.dex-experience:not([data-phase="open"]) {
+  height: 100dvh;
+  overflow: hidden;
+}
+.dex-experience[data-phase="closed"] > .pokedex {
+  visibility: hidden;
+}
+.cover-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  display: grid;
+  place-items: center;
+  perspective: 1800px;
+  overflow: hidden;
+}
+.cover-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #dce1e3;
+}
+.closed-device {
+  position: relative;
+  width: min(440px, calc(100vw - 48px));
+  height: min(680px, calc(100dvh - 72px));
+  min-height: 430px;
+  transform-style: preserve-3d;
+}
+.cover-back,
+.cover-face,
+.cover-inside {
+  position: absolute;
+  inset: 0;
+  border: 4px solid #2b1414;
+  border-radius: 24px 30px 32px 24px;
+  background: linear-gradient(115deg, #fb3b43, #e8232c 55%, #d91d29);
+  box-shadow:
+    inset 0 0 0 4px #fd7070,
+    inset -12px -16px #a1111a;
+}
+.cover-back {
+  transform: translateZ(-12px);
+  background: #ae1723;
+  box-shadow: 16px 22px 18px #26343b30;
+}
+.cover-spine {
+  position: absolute;
+  left: -15px;
+  top: 16px;
+  bottom: 15px;
+  width: 30px;
+  border: 4px solid #2b1414;
+  border-radius: 13px;
+  background: linear-gradient(
+    90deg,
+    #86131b,
+    #fb6666 40%,
+    #e52834 60%,
+    #87131c
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 55px 0;
+}
+.cover-spine i {
+  height: 24px;
+  border-block: 3px solid #67131c;
+  box-shadow: 0 3px #fc6666;
+}
+.cover-lid {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 50%;
+  transform-style: preserve-3d;
+}
+.cover-face,
+.cover-inside {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.cover-face {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cover-face::after {
+  content: "";
+  position: absolute;
+  inset: 13px 17px 23px;
+  border: 3px solid #bd1623;
+  border-left-color: #ff5f65;
+  border-bottom-color: #ff5f65;
+  border-radius: 12px;
+  pointer-events: none;
+}
+.cover-sensor.sensor {
+  width: 106px;
+  height: 106px;
+  left: 25px;
+  top: 22px;
+  padding: 11px;
+}
+.cover-lights.indicator-lights {
+  left: 158px;
+  top: 36px;
+  gap: 16px;
+}
+.cover-lights.indicator-lights i {
+  width: 25px;
+  height: 29px;
+}
+.cover-seam {
+  position: absolute;
+  inset: 140px 0 auto;
+  height: 44px;
+  background: #83151e;
+  clip-path: polygon(
+    0 83%,
+    31% 83%,
+    41% 0,
+    100% 0,
+    100% 11%,
+    42% 11%,
+    32% 94%,
+    0 94%
+  );
+}
+.cover-name {
+  margin-top: 205px;
+  text-align: center;
+  color: #671822;
+  text-shadow: 0 2px #ff7070;
+}
+.cover-name h1 {
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+.cover-name p {
+  font-size: 30px;
+  letter-spacing: 7px;
+  margin-top: 8px;
+}
+.cover-ridge {
+  width: 65%;
+  height: 6px;
+  border-top: 3px solid #a51320;
+  border-bottom: 2px solid #ff5961;
+  margin: 32px 0;
+  transform: skewX(-25deg);
+}
+.cover-open {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: #35191a;
+  font-size: 26px;
+  padding: 16px 22px;
+  border: 3px solid #7b1520;
+  border-radius: 6px;
+  background: #ed3039;
+  box-shadow:
+    inset 2px 2px #ff7576,
+    3px 4px #98131e;
+  z-index: 1;
+}
+.cover-open:hover {
+  background: #ff474e;
+}
+.cover-open:active {
+  transform: translateY(3px);
+  box-shadow: inset 2px 2px #a31b24;
+}
+.cover-open:disabled {
+  opacity: 1;
+}
+.cover-arrow {
+  color: #f8d65a;
+  display: flex;
+  filter: drop-shadow(2px 2px #65171a);
+}
+.cover-arrow svg {
+  width: 31px;
+  height: 31px;
+}
+.cover-count {
+  color: #661920;
+  font-size: 17px;
+  margin-top: 22px;
+}
+.cover-vents {
+  position: absolute;
+  right: 34px;
+  bottom: 43px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  width: 62px;
+}
+.cover-vents i {
+  height: 6px;
+  background: #85151e;
+  border-top: 2px solid #511923;
+  border-bottom: 2px solid #fa6b71;
+}
+.cover-screw {
+  position: absolute;
+  bottom: 37px;
+  left: 31px;
+  border: 2px solid #731620;
+  border-radius: 50%;
+  color: #571c24;
+  font-size: 23px;
+  line-height: 20px;
+  width: 23px;
+  text-align: center;
+}
+.cover-inside {
+  transform: rotateY(180deg);
+  padding: 26px;
+}
+.cover-inside div {
+  height: 100%;
+  border: 4px solid #6e1820;
+  border-radius: 14px;
+  box-shadow: inset 4px 4px #fd575e;
+  background: linear-gradient(100deg, #bd1f2c, #ef3541);
+}
+.cover-opening,
+.cover-closing {
+  pointer-events: none;
+}
+.cover-opening::before {
+  animation: cover-backdrop-out var(--cover-time) both;
+}
+.cover-closing::before {
+  animation: cover-backdrop-out var(--cover-time) reverse both;
+}
+.cover-opening .cover-lid {
+  animation: cover-unfold var(--cover-time) cubic-bezier(0.32, 0.04, 0.22, 1)
+    both;
+}
+.cover-opening .cover-face,
+.cover-opening .cover-inside {
+  animation: cover-face-out var(--cover-time) both;
+}
+.cover-closing .cover-face,
+.cover-closing .cover-inside {
+  animation: cover-face-out var(--cover-time) reverse both;
+}
+.cover-closing .cover-lid {
+  animation: cover-unfold var(--cover-time) cubic-bezier(0.32, 0.04, 0.22, 1)
+    reverse both;
+}
+.cover-opening .cover-back,
+.cover-opening .cover-spine {
+  animation: cover-base-out var(--cover-time) both;
+}
+.cover-closing .cover-back,
+.cover-closing .cover-spine {
+  animation: cover-base-out var(--cover-time) reverse both;
+}
+.dex-experience[data-phase="opening"] > .pokedex {
+  animation: dex-reveal var(--cover-time) both;
+}
+.dex-experience[data-phase="closing"] > .pokedex {
+  animation: dex-reveal var(--cover-time) reverse both;
+}
+.dex-close {
+  position: absolute;
+  z-index: 8;
+  right: 55px;
+  top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #57141a;
+  border: 2px solid #9a1723;
+  border-radius: 4px;
+  padding: 4px 9px;
+  font-size: 15px;
+  background: #f23c45;
+  box-shadow: inset 1px 1px #ff777b;
+}
+.dex-close:hover {
+  background: #ff6570;
+}
+@keyframes cover-unfold {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(-155deg);
+  }
+}
+@keyframes cover-face-out {
+  0%,
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes cover-backdrop-out {
+  0%,
+  15% {
+    opacity: 1;
+  }
+  65%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes cover-base-out {
+  0%,
+  15% {
+    opacity: 1;
+  }
+  65%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes dex-reveal {
+  0%,
+  12% {
+    opacity: 0;
+    transform: scale(0.91);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (max-height: 740px) {
+  .cover-name {
+    margin-top: 183px;
+  }
+  .cover-ridge {
+    margin: 22px 0;
+  }
+  .cover-count {
+    margin-top: 15px;
+  }
+  .cover-open {
+    padding: 12px 20px;
+  }
+}
+@media (max-width: 760px) {
+  .dex-close {
+    top: 20px;
+    right: 25px;
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+  .show-detail .dex-close {
+    top: 44px;
+    right: 35px;
+  }
+  .closed-device {
+    width: min(360px, calc(100vw - 48px));
+    height: min(640px, calc(100dvh - 64px));
+  }
+  .cover-sensor.sensor {
+    width: 86px;
+    height: 86px;
+    left: 20px;
+    padding: 8px;
+  }
+  .cover-lights.indicator-lights {
+    left: 128px;
+    gap: 12px;
+  }
+  .cover-lights.indicator-lights i {
+    width: 22px;
+    height: 25px;
+  }
+  .cover-name h1 {
+    font-size: 34px;
+  }
+  .cover-name p {
+    font-size: 26px;
+  }
+  .cover-open {
+    font-size: 23px;
+  }
+}
+@media (max-height: 590px) {
+  .cover-sensor.sensor {
+    width: 70px;
+    height: 70px;
+    padding: 7px;
+  }
+  .cover-seam {
+    top: 92px;
+  }
+  .cover-name {
+    margin-top: 132px;
+  }
+  .cover-name h1 {
+    font-size: 28px;
+  }
+  .cover-name p {
+    font-size: 22px;
+    margin-top: 4px;
+  }
+  .cover-ridge {
+    margin: 18px 0;
+  }
+  .cover-open {
+    font-size: 20px;
+    padding: 8px 15px;
+  }
+  .cover-count {
+    font-size: 14px;
+  }
+  .cover-vents {
+    bottom: 30px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cover-stage *,
+  .cover-stage::before,
+  .dex-experience > .pokedex {
+    animation: none !important;
+    transition: none !important;
+  }
+}
