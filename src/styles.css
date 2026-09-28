@@ -1095,7 +1095,7 @@ select {
     font-size: 24px;
   }
 }
-@media (max-width: 1250px) {
+@media (max-width: 1250px), (min-width: 761px) and (max-height: 820px) {
   .pokedex {
     width: calc(100% - 28px);
     grid-template-columns: minmax(0, 0.91fr) 32px minmax(0, 1fr);
@@ -1728,6 +1728,21 @@ select {
   }
   .right-shell {
     min-height: calc(100dvh - 24px);
+  }
+}
+@media (min-width: 761px) and (max-height: 820px) {
+  .pokedex {
+    min-height: 650px;
+  }
+  .device-header {
+    height: 132px;
+  }
+  .device-keys {
+    height: 122px;
+  }
+  .sensor {
+    width: 86px;
+    height: 86px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
