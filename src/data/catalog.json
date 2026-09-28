@@ -7450,9 +7450,9 @@
         },
         {
           "name": "Range",
-          "description": "作用范围。噪声门中是最大衰减量；原厂 Delay 中是时间旋钮的工作区间。",
+          "description": "关门后的最大衰减量。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 0,
@@ -7465,7 +7465,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "较深衰减更接近静音，较浅衰减只压低噪声；触发位置仍由 Threshold 决定。"
         },
         {
           "name": "Gate",
@@ -7578,24 +7579,27 @@
       "controls": [
         {
           "name": "Osc 1 Vol",
-          "description": "对应声部／振荡器：对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Osc 1 振荡器电平。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "增加让该声部更突出，降低减弱；各振荡器叠加后要检查总电平。"
         },
         {
           "name": "Osc 2 Vol",
-          "description": "对应声部／振荡器：对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Osc 2 振荡器电平。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "增加让该声部更突出，降低减弱；各振荡器叠加后要检查总电平。"
         },
         {
           "name": "Sub Osc  Vol",
-          "description": "对应声部／振荡器：对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Sub Osc 振荡器电平。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "增加让该声部更突出，降低减弱；各振荡器叠加后要检查总电平。"
         },
         {
           "name": "Cutoff",
@@ -7628,10 +7632,11 @@
         },
         {
           "name": "Synth Level",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "合成声部的总电平。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "增加让该声部更突出，降低减弱；各振荡器叠加后要检查总电平。"
         },
         {
           "name": "Osc 1 Wave",
@@ -7885,9 +7890,9 @@
         },
         {
           "name": "Depth",
-          "description": "调制深度，改变摆动幅度。音箱中的 Depth 可能是低频后级共振，见该单块用途。",
+          "description": "滤波扫动的深度。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 0,
@@ -7900,7 +7905,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加扩大扫动幅度；降低使变化更轻微。速度另由 Rate 决定。"
         },
         {
           "name": "Feedback",
@@ -8218,10 +8224,11 @@
         },
         {
           "name": "Depth",
-          "description": "调制深度，改变摆动幅度。音箱中的 Depth 可能是低频后级共振，见该单块用途。",
+          "description": "滤波扫动的深度。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "增加扩大扫动幅度；降低使变化更轻微。速度另由 Rate 决定。"
         },
         {
           "name": "Rate",
@@ -8545,10 +8552,11 @@
         },
         {
           "name": "Range",
-          "description": "作用范围。噪声门中是最大衰减量；原厂 Delay 中是时间旋钮的工作区间。",
+          "description": "Time 旋钮的工作时间区间。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "先选择合适区间，再细调 Time；不是回声反馈量。"
         },
         {
           "name": "Subdivision",
@@ -8661,10 +8669,11 @@
         },
         {
           "name": "Range",
-          "description": "作用范围。噪声门中是最大衰减量；原厂 Delay 中是时间旋钮的工作区间。",
+          "description": "Time 旋钮的工作时间区间。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "先选择合适区间，再细调 Time；不是回声反馈量。"
         },
         {
           "name": "Subdivision",
@@ -8753,10 +8762,11 @@
         },
         {
           "name": "Range",
-          "description": "作用范围。噪声门中是最大衰减量；原厂 Delay 中是时间旋钮的工作区间。",
+          "description": "Time 旋钮的工作时间区间。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "先选择合适区间，再细调 Time；不是回声反馈量。"
         },
         {
           "name": "Subdivision",
@@ -10216,17 +10226,19 @@
       "controls": [
         {
           "name": "Level Row 1",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "第 1 行信号的电平。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "用于平衡并行路径；先分别调好音色，再合并比较。"
         },
         {
           "name": "Level Row 2",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "第 2 行信号的电平。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "用于平衡并行路径；先分别调好音色，再合并比较。"
         },
         {
           "name": "Crossover",
@@ -10323,17 +10335,19 @@
       "controls": [
         {
           "name": "Send Level",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "送往外部设备的电平。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "提高会更强地推动外部设备；过载时降低，避免把发送电平当成监听音量。"
         },
         {
           "name": "Through Level",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "继续沿内部链路传送的电平。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "与 Send Level 分开控制；降低只减弱内部直通路径。"
         }
       ],
       "images": [
@@ -10424,10 +10438,11 @@
       "controls": [
         {
           "name": "Send Level",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "送往外部设备的电平。",
           "evidence": "community",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "提高会更强地推动外部设备；过载时降低，避免把发送电平当成监听音量。"
         },
         {
           "name": "Blend",
@@ -10935,7 +10950,7 @@
         {
           "name": "Gain High Treble",
           "symbol": "GAIN_HIGH_TREBLE",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "High Treble 路径的驱动增益。",
           "range": {
             "default": 0.5,
             "maximum": 1,
@@ -10944,7 +10959,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -10957,12 +10972,13 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加更容易饱和；用该路 Level 或总输出配平后比较失真性格。"
         },
         {
           "name": "Gain Normal",
           "symbol": "GAIN_NORMAL",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Normal 路径的驱动增益。",
           "range": {
             "default": 0.5,
             "maximum": 1,
@@ -10971,7 +10987,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -10984,7 +11000,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加更容易饱和；用该路 Level 或总输出配平后比较失真性格。"
         },
         {
           "name": "Tone",
@@ -14323,7 +14340,7 @@
         {
           "name": "Depth",
           "symbol": "depth",
-          "description": "调制深度，改变摆动幅度。音箱中的 Depth 可能是低频后级共振，见该单块用途。",
+          "description": "合唱调制深度。",
           "range": {
             "default": 5,
             "maximum": 10,
@@ -14332,7 +14349,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 0,
@@ -14356,7 +14373,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加使音高摆动更明显；降低偏轻微加厚。"
         }
       ],
       "images": [
@@ -16566,7 +16584,7 @@
         {
           "name": "Filter",
           "symbol": "filter",
-          "description": "修整效果声频谱。不同单块方向不同，请边弹边调；不是所有 Filter 都是同一种滤波器。",
+          "description": "效果声的音色滤波。",
           "range": {
             "default": 50,
             "maximum": 100,
@@ -16575,7 +16593,7 @@
           "unit": "%",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "部分功能待核实",
           "panelRefs": [
             {
               "imageIndex": 0,
@@ -16599,7 +16617,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "用于调整明暗；当前数字模型的刻度方向尚未核实，不按其他同名旋钮的方向推断。"
         },
         {
           "name": "Mix",
@@ -17153,7 +17172,7 @@
         {
           "name": "Lead Gain 4",
           "symbol": "LeadGain4",
-          "description": "对应通道：增益。驱动／音箱中通常改变推动与失真程度；Gain 工具单块中只改变电平。",
+          "description": "所标通道的驱动增益。",
           "range": {
             "default": 6.199999809265137,
             "maximum": 10,
@@ -17162,7 +17181,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 4,
@@ -17175,12 +17194,13 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "仅在对应通道启用时发挥作用；提高增加饱和，用该通道音量补偿。"
         },
         {
           "name": "Lead Gain 3",
           "symbol": "LeadGain3",
-          "description": "对应通道：增益。驱动／音箱中通常改变推动与失真程度；Gain 工具单块中只改变电平。",
+          "description": "所标通道的驱动增益。",
           "range": {
             "default": 3.9000000953674316,
             "maximum": 10,
@@ -17189,7 +17209,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 4,
@@ -17202,7 +17222,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "仅在对应通道启用时发挥作用；提高增加饱和，用该通道音量补偿。"
         },
         {
           "name": "Lead Bottom 3",
@@ -17342,7 +17363,7 @@
         {
           "name": "Clean Gain 1",
           "symbol": "CleanGain1",
-          "description": "对应通道：增益。驱动／音箱中通常改变推动与失真程度；Gain 工具单块中只改变电平。",
+          "description": "所标通道的驱动增益。",
           "range": {
             "default": 3.5999999046325684,
             "maximum": 10,
@@ -17351,7 +17372,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 2,
@@ -17364,12 +17385,13 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "仅在对应通道启用时发挥作用；提高增加饱和，用该通道音量补偿。"
         },
         {
           "name": "Crunch Gain 2",
           "symbol": "CrunchGain2",
-          "description": "对应通道：增益。驱动／音箱中通常改变推动与失真程度；Gain 工具单块中只改变电平。",
+          "description": "所标通道的驱动增益。",
           "range": {
             "default": 4.599999904632568,
             "maximum": 10,
@@ -17378,7 +17400,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 2,
@@ -17391,7 +17413,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "仅在对应通道启用时发挥作用；提高增加饱和，用该通道音量补偿。"
         },
         {
           "name": "Clean Crunch Bottom",
@@ -17975,7 +17998,7 @@
         {
           "name": "Filter",
           "symbol": "Filter",
-          "description": "修整效果声频谱。不同单块方向不同，请边弹边调；不是所有 Filter 都是同一种滤波器。",
+          "description": "效果声的音色滤波。",
           "range": {
             "default": 5,
             "maximum": 10,
@@ -17984,7 +18007,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "部分功能待核实",
           "panelRefs": [
             {
               "imageIndex": 0,
@@ -18008,7 +18031,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "用于调整明暗；当前数字模型的刻度方向尚未核实，不按其他同名旋钮的方向推断。"
         },
         {
           "name": "Level",
@@ -19442,7 +19466,7 @@
         {
           "name": "Echo Volume",
           "symbol": "EchoSosVolume",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Echo 支路电平。",
           "range": {
             "default": 3.0999999046325684,
             "maximum": 10,
@@ -19451,7 +19475,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 2,
@@ -19464,7 +19488,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加使此声部更突出，降低给原声留出空间。"
         },
         {
           "name": "Chorus Intensity",
@@ -19935,7 +19960,7 @@
         {
           "name": "Reverb Volume",
           "symbol": "ReverbVolume",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Reverb 支路电平。",
           "range": {
             "default": 1.7000000476837158,
             "maximum": 10,
@@ -19944,7 +19969,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 2,
@@ -19957,7 +19982,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加使此声部更突出，降低给原声留出空间。"
         }
       ],
       "images": [
@@ -20618,7 +20644,7 @@
         {
           "name": "Gain Low",
           "symbol": "GainLow",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Low 路径的驱动增益。",
           "range": {
             "default": 3.5999999046325684,
             "maximum": 10,
@@ -20627,7 +20653,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -20640,7 +20666,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加更容易饱和；用该路 Level 或总输出配平后比较失真性格。"
         },
         {
           "name": "Comp Low",
@@ -20699,7 +20726,7 @@
         {
           "name": "Level Low",
           "symbol": "LevelLow",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Low 频段输出电平。",
           "range": {
             "default": -1.3999979496002197,
             "maximum": 12,
@@ -20708,7 +20735,7 @@
           "unit": "dB",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 2,
@@ -20721,12 +20748,13 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加提高该频段在混合中的占比；调完失真后用它平衡各段响度。"
         },
         {
           "name": "Gain Mid",
           "symbol": "GainMid",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Mid 路径的驱动增益。",
           "range": {
             "default": 6.099999904632568,
             "maximum": 10,
@@ -20735,7 +20763,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 2,
@@ -20748,7 +20776,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加更容易饱和；用该路 Level 或总输出配平后比较失真性格。"
         },
         {
           "name": "Comp Mid",
@@ -20795,7 +20824,7 @@
         {
           "name": "Level Mid",
           "symbol": "LevelMid",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Mid 频段输出电平。",
           "range": {
             "default": -2.5999979972839355,
             "maximum": 12,
@@ -20804,13 +20833,14 @@
           "unit": "dB",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "增加提高该频段在混合中的占比；调完失真后用它平衡各段响度。"
         },
         {
           "name": "Gain High",
           "symbol": "GainHigh",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "High 路径的驱动增益。",
           "range": {
             "default": 4.699999809265137,
             "maximum": 10,
@@ -20819,7 +20849,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 2,
@@ -20832,7 +20862,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加更容易饱和；用该路 Level 或总输出配平后比较失真性格。"
         },
         {
           "name": "Comp High",
@@ -20891,7 +20922,7 @@
         {
           "name": "Level High",
           "symbol": "LevelHigh",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "High 频段输出电平。",
           "range": {
             "default": 0.1000019982457161,
             "maximum": 12,
@@ -20900,7 +20931,7 @@
           "unit": "dB",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 3,
@@ -20913,7 +20944,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加提高该频段在混合中的占比；调完失真后用它平衡各段响度。"
         },
         {
           "name": "Bass",
@@ -23161,7 +23193,7 @@
         {
           "name": "Input Gain",
           "symbol": "Input_20Gain",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "输入电平。",
           "range": {
             "default": -9.999999974752427e-7,
             "maximum": 24,
@@ -23170,7 +23202,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -23183,7 +23215,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加会更强地推动内部处理；降低保留余量，最后用输出补偿。"
         },
         {
           "name": "Output Gain",
@@ -23555,7 +23588,7 @@
         {
           "name": "Level Low",
           "symbol": "Level_20Low_20Band",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Low 频段输出电平。",
           "range": {
             "default": -9.999999974752427e-7,
             "maximum": 24,
@@ -23564,7 +23597,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 4,
@@ -23577,12 +23610,13 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加提高该频段在混合中的占比；调完失真后用它平衡各段响度。"
         },
         {
           "name": "Level Low-Mid",
           "symbol": "Level_20LowMid_20Band",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Low-Mid 频段输出电平。",
           "range": {
             "default": -9.999999974752427e-7,
             "maximum": 24,
@@ -23591,7 +23625,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 4,
@@ -23604,12 +23638,13 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加提高该频段在混合中的占比；调完失真后用它平衡各段响度。"
         },
         {
           "name": "Level Hi-Mid",
           "symbol": "Level_20HighMid_20Band",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Hi-Mid 频段输出电平。",
           "range": {
             "default": -9.999999974752427e-7,
             "maximum": 24,
@@ -23618,7 +23653,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 4,
@@ -23631,12 +23666,13 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加提高该频段在混合中的占比；调完失真后用它平衡各段响度。"
         },
         {
           "name": "Level High",
           "symbol": "Level_20High_20Band",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "High 频段输出电平。",
           "range": {
             "default": -9.999999974752427e-7,
             "maximum": 24,
@@ -23645,7 +23681,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 4,
@@ -23658,7 +23694,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加提高该频段在混合中的占比；调完失真后用它平衡各段响度。"
         },
         {
           "name": "Solo Low",
@@ -24999,7 +25036,7 @@
         {
           "name": "Click Volume",
           "symbol": "metro_vol",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Click 支路电平。",
           "range": {
             "default": -26,
             "maximum": 0,
@@ -25008,7 +25045,7 @@
           "unit": "dB",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -25021,12 +25058,13 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加使此声部更突出，降低给原声留出空间。"
         },
         {
           "name": "Drone Volume",
           "symbol": "drone_vol",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Drone 支路电平。",
           "range": {
             "default": -26,
             "maximum": 0,
@@ -25035,7 +25073,7 @@
           "unit": "dB",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -25048,7 +25086,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加使此声部更突出，降低给原声留出空间。"
         },
         {
           "name": "Time Signature",
@@ -30158,7 +30197,7 @@
         {
           "name": "Width",
           "symbol": "Width",
-          "description": "展开程度／宽度。立体声效果中改变左右分布；具体单位与选项见该参数。",
+          "description": "Width 专用控制，厂商公开介绍未解释具体映射。",
           "range": {
             "default": 2,
             "maximum": 10,
@@ -30167,7 +30206,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "部分功能待核实",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -30180,7 +30219,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "保留默认值作比较基准；不把它解释成立体声宽度。"
         },
         {
           "name": "Mix",
@@ -31283,7 +31323,7 @@
         {
           "name": "In Level",
           "symbol": "in_level",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "输入电平。",
           "range": {
             "default": 0,
             "maximum": 24,
@@ -31292,13 +31332,14 @@
           "unit": "dB",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "增加会更强地推动内部处理；降低保留余量，最后用输出补偿。"
         },
         {
           "name": "Out Level",
           "symbol": "level",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "输出电平。",
           "range": {
             "default": 0,
             "maximum": 24,
@@ -31307,8 +31348,9 @@
           "unit": "dB",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "调整处理后的响度；位于模型内部的增益还可能影响后续饱和，最后用总输出配平。"
         },
         {
           "name": "L1 On",
@@ -32896,7 +32938,7 @@
         {
           "name": "Input Gain",
           "symbol": "inputGain",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "输入电平。",
           "range": {
             "default": 0,
             "maximum": 20,
@@ -32905,8 +32947,9 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "增加会更强地推动内部处理；降低保留余量，最后用输出补偿。"
         },
         {
           "name": "Split Frequency",
@@ -34840,7 +34883,7 @@
         {
           "name": "Filter",
           "symbol": "Filter",
-          "description": "修整效果声频谱。不同单块方向不同，请边弹边调；不是所有 Filter 都是同一种滤波器。",
+          "description": "效果声的音色滤波。",
           "range": {
             "default": 1.2999999523162842,
             "maximum": 10,
@@ -34849,7 +34892,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "部分功能待核实",
           "panelRefs": [
             {
               "imageIndex": 0,
@@ -34873,7 +34916,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "用于调整明暗；当前数字模型的刻度方向尚未核实，不按其他同名旋钮的方向推断。"
         },
         {
           "name": "Blend",
@@ -35675,7 +35719,7 @@
         {
           "name": "Filter",
           "symbol": "filter",
-          "description": "修整效果声频谱。不同单块方向不同，请边弹边调；不是所有 Filter 都是同一种滤波器。",
+          "description": "效果声的音色滤波。",
           "range": {
             "default": 5,
             "maximum": 10,
@@ -35684,7 +35728,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "部分功能待核实",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -35697,7 +35741,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "用于调整明暗；当前数字模型的刻度方向尚未核实，不按其他同名旋钮的方向推断。"
         },
         {
           "name": "Mix",
@@ -35798,7 +35843,7 @@
         {
           "name": "Filter",
           "symbol": "lpf",
-          "description": "修整效果声频谱。不同单块方向不同，请边弹边调；不是所有 Filter 都是同一种滤波器。",
+          "description": "效果声的音色滤波。",
           "range": {
             "default": 4,
             "maximum": 10,
@@ -35807,7 +35852,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "部分功能待核实",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -35820,7 +35865,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "用于调整明暗；当前数字模型的刻度方向尚未核实，不按其他同名旋钮的方向推断。"
         },
         {
           "name": "-1 oct",
@@ -36798,7 +36844,7 @@
         {
           "name": "In Level",
           "symbol": "in_level",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "输入电平。",
           "range": {
             "default": 0,
             "maximum": 24,
@@ -36807,7 +36853,7 @@
           "unit": "dB",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -36820,7 +36866,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加会更强地推动内部处理；降低保留余量，最后用输出补偿。"
         },
         {
           "name": "Voice",
@@ -36987,7 +37034,7 @@
         {
           "name": "Out Level",
           "symbol": "level",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "输出电平。",
           "range": {
             "default": 0,
             "maximum": 24,
@@ -36996,7 +37043,7 @@
           "unit": "dB",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -37009,7 +37056,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "调整处理后的响度；位于模型内部的增益还可能影响后续饱和，最后用总输出配平。"
         },
         {
           "name": "Pick Voice",
@@ -37877,7 +37925,7 @@
         {
           "name": "Delay Level",
           "symbol": "delaylevel",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "Delay 支路电平。",
           "range": {
             "default": 4,
             "maximum": 10,
@@ -37886,8 +37934,9 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "增加使此声部更突出，降低给原声留出空间。"
         },
         {
           "name": "Blend",
@@ -38322,7 +38371,7 @@
         {
           "name": "Mod",
           "symbol": "mod",
-          "description": "调制量；Alpha Omicron 例外，那里是在 Alpha 与 Omega 失真性格之间混合。",
+          "description": "延迟声的调制量。",
           "range": {
             "default": 5,
             "maximum": 10,
@@ -38331,8 +38380,9 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "增加让回声产生更明显的音高／时间运动，降低获得较稳定的重复。"
         },
         {
           "name": "Trails",
@@ -38569,7 +38619,7 @@
         {
           "name": "Filter",
           "symbol": "filter",
-          "description": "修整效果声频谱。不同单块方向不同，请边弹边调；不是所有 Filter 都是同一种滤波器。",
+          "description": "效果声的音色滤波。",
           "range": {
             "default": 2,
             "maximum": 10,
@@ -38578,7 +38628,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "部分功能待核实",
           "panelRefs": [
             {
               "imageIndex": 0,
@@ -38591,7 +38641,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "用于调整明暗；当前数字模型的刻度方向尚未核实，不按其他同名旋钮的方向推断。"
         },
         {
           "name": "Stereo Image",
@@ -38626,7 +38677,7 @@
         {
           "name": "Mod",
           "symbol": "mod",
-          "description": "调制量；Alpha Omicron 例外，那里是在 Alpha 与 Omega 失真性格之间混合。",
+          "description": "延迟声的调制量。",
           "range": {
             "default": 0,
             "maximum": 10,
@@ -38635,7 +38686,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 0,
@@ -38648,7 +38699,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加让回声产生更明显的音高／时间运动，降低获得较稳定的重复。"
         },
         {
           "name": "Trails",
@@ -38886,7 +38938,7 @@
         {
           "name": "Filter",
           "symbol": "filter",
-          "description": "修整效果声频谱。不同单块方向不同，请边弹边调；不是所有 Filter 都是同一种滤波器。",
+          "description": "效果声的音色滤波。",
           "range": {
             "default": 2,
             "maximum": 10,
@@ -38895,7 +38947,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "部分功能待核实",
           "panelRefs": [
             {
               "imageIndex": 0,
@@ -38908,7 +38960,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "用于调整明暗；当前数字模型的刻度方向尚未核实，不按其他同名旋钮的方向推断。"
         },
         {
           "name": "Stereo Image",
@@ -38943,7 +38996,7 @@
         {
           "name": "Mod",
           "symbol": "mod",
-          "description": "调制量；Alpha Omicron 例外，那里是在 Alpha 与 Omega 失真性格之间混合。",
+          "description": "延迟声的调制量。",
           "range": {
             "default": 4,
             "maximum": 10,
@@ -38952,7 +39005,7 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 0,
@@ -38965,7 +39018,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "增加让回声产生更明显的音高／时间运动，降低获得较稳定的重复。"
         },
         {
           "name": "Trails",
@@ -40171,7 +40225,7 @@
         {
           "name": "Master Gain",
           "symbol": "MasterGain",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "主增益。",
           "range": {
             "default": 28,
             "maximum": 40,
@@ -40345,7 +40399,7 @@
             }
           ],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
+          "explanationBasis": "通用调节参考",
           "panelRefs": [
             {
               "imageIndex": 1,
@@ -40358,7 +40412,8 @@
               ],
               "method": "exact-label"
             }
-          ]
+          ],
+          "adjustment": "调整处理后的响度；位于模型内部的增益还可能影响后续饱和，最后用总输出配平。"
         },
         {
           "name": "Bass",
@@ -40760,7 +40815,7 @@
         {
           "name": "Power Amp Volume",
           "symbol": "PowerAmpVolume",
-          "description": "对应频段／声部／阶段的电平或增益；增减后应重新检查整体响度。",
+          "description": "后级音量。",
           "range": {
             "default": 3,
             "maximum": 10,
@@ -40769,8 +40824,9 @@
           "unit": "",
           "options": [],
           "evidence": "metadata",
-          "explanationBasis": "基础释义",
-          "panelRefs": []
+          "explanationBasis": "通用调节参考",
+          "panelRefs": [],
+          "adjustment": "调整处理后的响度；位于模型内部的增益还可能影响后续饱和，最后用总输出配平。"
         },
         {
           "name": "Power Amp Resonance",
