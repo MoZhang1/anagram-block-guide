@@ -506,6 +506,28 @@ kbd {
   line-height: 1.7;
   margin-bottom: 13px;
 }
+.setup-note { margin: 0 0 26px; border-left: 2px solid #8baa96; padding: 3px 0 3px 16px; }
+.setup-note h2 { margin-bottom: 8px; }
+.setup-note h2 small { margin-left: 8px; font-size: 10px; font-weight: 400; color: #87948b; }
+.setup-note p { font-size: 13px; line-height: 1.85; color: #536057; }
+.panel-reference { margin: 0 0 28px; scroll-margin-top: 14px; }
+.panel-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+.panel-tabs button { padding: 7px 11px; border: 1px solid var(--line); border-radius: 5px; color: #5e6e64; font-size: 11px; }
+.panel-tabs button[aria-pressed="true"] { background: #e7efe9; color: #254f37; border-color: #8aaa94; }
+.panel-image { position: relative; width: 100%; border-radius: 6px; overflow: hidden; background: #171b18; }
+.panel-image.artwork { width: min(100%, 330px); margin-inline: auto; background: #eff3f0; }
+.panel-image > img { display: block; width: 100%; height: auto; }
+.panel-marker { position: absolute; padding: 0; border: 1px solid transparent; background: transparent; border-radius: 2px; cursor: pointer; }
+.panel-marker:hover, .panel-marker:focus-visible { outline: 2px solid #a2efb5; background: #77d99425; }
+.panel-marker.selected { outline: 2px solid #b6ffca; box-shadow: 0 0 0 4px #142d1cad; background: #77d99435; }
+.panel-caption { font-size: 12px; line-height: 1.7; color: #467254; margin: 10px 0 6px; min-height: 20px; }
+.panel-original { display: inline-block; font-size: 11px; color: #49715a; margin: 0 0 8px; }
+.panel-link { display: block; margin-top: 6px; color: #49715a; font-size: 10px; padding: 3px 0; text-align: left; }
+.selected-control { background: #f0f6f1; }
+tbody td p.adjustment { margin-top: 9px; }
+.adjustment > span { display: block; color: #819088; font-size: 10px; margin-bottom: 2px; }
+.parameter-basis { display: block; font-size: 9px; color: #8a978f; margin-top: 9px; }
+.parameter-basis a { color: #6f897a; text-decoration: underline; text-underline-offset: 2px; }
 .table-wrap {
   border: 1px solid var(--line);
   border-radius: 7px;

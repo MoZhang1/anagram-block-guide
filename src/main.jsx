@@ -121,7 +121,7 @@ function Filters({ state, change, blocks, mobileOpen }) {
           value={state.coverage}
           onChange={(e) => change({ coverage: e.target.value })}
         >
-          {["全部资料", "有面板说明", "面板待核实"].map((x) => (
+          {["全部资料", "有面板说明", "可图文定位", "面板待核实"].map((x) => (
             <option key={x}>{x}</option>
           ))}
         </select>
@@ -129,7 +129,9 @@ function Filters({ state, change, blocks, mobileOpen }) {
       <p className="rail-note">
         非官方中文参考
         <br />
-        核对日期 {data.updated}
+        清单 {data.updated}
+        <br />
+        说明修订 {data.contentUpdated || data.updated}
         <br />
         KosmOS {data.firmware}
       </p>
@@ -279,31 +281,61 @@ function ImageGallery({ block }) {
     </figure>
   );
 }
+function PanelReference({ block, selected, onSelect, panelRef }) {
+  const images = block.images.map((image, index) => ({ ...image, index })).filter(image => image.panel);
+  if (!images.length) return null;
+  const image = images.find(i => i.index === selected?.imageIndex) || images.find(i => i.index > 0) || images[0];
+  const markers = block.controls.flatMap((c, controlIndex) => (c.panelRefs || [])
+    .filter(r => r.imageIndex === image.index).map(r => ({ ...r, controlIndex, name: c.name })));
+  return <section className="panel-reference" ref={panelRef} aria-label="面板对照">
+    <div className="section-heading"><h2>面板对照</h2><span>{image.index === 0 ? '单块外观 · 非完整参数页' : '官方商店截图'}</span></div>
+    <div className="panel-tabs" aria-label="选择参考图片">
+      {images.map(i => <button key={i.index} aria-pressed={image.index === i.index} onClick={() => onSelect({ imageIndex: i.index })}>
+        {i.index === 0 ? '外观标识' : `面板 ${i.index}`}
+      </button>)}
+    </div>
+    <div className={'panel-image ' + (image.index === 0 ? 'artwork' : '')}>
+      <img src={imgUrl(image.src)} alt={block.name + ' ' + (image.index === 0 ? '单块外观标识' : `官方操作面板 ${image.index}`)} />
+      {markers.map(m => <button key={m.controlIndex}
+        className={'panel-marker ' + (selected?.controlIndex === m.controlIndex ? 'selected' : '')}
+        style={{ left: `${m.box[0] * 100}%`, top: `${m.box[1] * 100}%`, width: `${m.box[2] * 100}%`, height: `${m.box[3] * 100}%` }}
+        aria-label={'查看 ' + m.name + ' 说明'} title={m.name}
+        onClick={() => { onSelect(m); requestAnimationFrame(() => document.getElementById(`control-${block.id}-${m.controlIndex}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })); }} />)}
+    </div>
+    <p className="panel-caption" aria-live="polite">
+      {selected?.label ? `${selected.name || ''} → 图中 ${selected.label}` : '点击图中文字可跳到参数；点击表内“图中位置”可反向定位。'}
+    </p>
+    <a className="panel-original" href={imgUrl(image.src)} target="_blank" rel="noreferrer">查看原图 ↗</a>
+    <p className="table-note">按图片中的英文标签匹配；截图可能来自旧版本，数值不是推荐设置。未匹配的参数不标位置。</p>
+  </section>;
+}
 function ParameterTable({ block }) {
   const [query, setQuery] = useState("");
-  useEffect(() => setQuery(""), [block.id]);
-  const controls = block.controls.filter((c) =>
-    (c.name + " " + c.description + " " + (c.group || ""))
+  const [selectedPanel, setSelectedPanel] = useState(null);
+  const panelRef = useRef(null);
+  const controls = block.controls.map((c, index) => ({ ...c, index })).filter((c) =>
+    (c.name + " " + c.description + " " + (c.adjustment || "") + " " + (c.group || ""))
       .toLowerCase()
       .includes(query.toLowerCase()),
   );
   return (
     <section className="parameters">
+      <PanelReference block={block} selected={selectedPanel} onSelect={(m) => { setQuery(''); setSelectedPanel(m); }} panelRef={panelRef} />
       <div className="section-heading">
-        <h2>操作面板</h2>
+        <h2>参数说明</h2>
         <span>{block.controls.length} 项说明</span>
       </div>
       {block.controls.length > 12 && (
         <input
           className="parameter-search"
-          aria-label="在本单块内查旋钮"
-          placeholder="在这个单块里查旋钮…"
+          aria-label="搜索本单块参数"
+          placeholder="搜索参数名称、功能…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
       )}
       <p className="table-note">
-        英文对应面板，中文解释用途。
+        保留面板英文名称。“调节与听感”为使用参考，不是厂商预设。
         {block.origin === "Marketplace"
           ? "范围、默认值及选项来自官方参数元数据。"
           : "未确认的数值不填写；社区记录可能与当前固件有差异。"}
@@ -314,23 +346,29 @@ function ParameterTable({ block }) {
             <thead>
               <tr>
                 <th>参数</th>
-                <th>中文操作说明</th>
+                <th>功能与调节</th>
               </tr>
             </thead>
             <tbody>
               {controls.map((c, i) => (
-                <tr key={c.name + i}>
+                <tr key={c.name + i} id={`control-${block.id}-${c.index}`} className={selectedPanel?.controlIndex === c.index ? 'selected-control' : ''}>
                   <th scope="row">
                     {c.group && (
                       <small className="param-group">{c.group}</small>
                     )}
                     <span>{c.name}</span>
+                    {(c.panelRefs?.length > 0) && <button className="panel-link" onClick={() => {
+                      const ref = c.panelRefs.find(r => r.imageIndex > 0) || c.panelRefs[0];
+                      setSelectedPanel({ ...ref, controlIndex: c.index, name: c.name });
+                      panelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}>图中位置 ↗</button>}
                     {c.evidence === "editorial" && (
                       <small className="param-group">功能分组名称</small>
                     )}
                   </th>
                   <td>
                     <p>{c.description}</p>
+                    {c.adjustment && <p className="adjustment"><span>调节与听感</span>{c.adjustment}</p>}
                     {c.range && (
                       <small className="range">
                         {number(c.range.minimum)} ～ {number(c.range.maximum)}{" "}
@@ -339,7 +377,7 @@ function ParameterTable({ block }) {
                     )}
                     {c.options?.length > 0 && (
                       <details className="options">
-                        <summary>查看 {c.options.length} 个原始选项</summary>
+                        <summary>选项／特殊值（{c.options.length}）</summary>
                         <ul>
                           {c.options.map((o, j) => (
                             <li key={j}>
@@ -349,13 +387,14 @@ function ParameterTable({ block }) {
                         </ul>
                       </details>
                     )}
+                    <small className="parameter-basis">{c.explanationSource ? <a href={c.explanationSource} target="_blank" rel="noreferrer">{c.explanationBasis} ↗</a> : c.explanationBasis}</small>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
           {!controls.length && (
-            <p className="no-param">这个单块内没有匹配的旋钮。</p>
+            <p className="no-param">无匹配参数。</p>
           )}
         </div>
       ) : (
@@ -364,7 +403,7 @@ function ParameterTable({ block }) {
           <div>
             <strong>完整面板尚待核实</strong>
             <p>
-              已收录官方名称、图片与用途。没有用实体原型的旋钮冒充数字模型；请通过下方官方页面了解可用版本。
+              已收录官方名称、图片与简介，完整数字面板资料尚未取得。
             </p>
           </div>
         </div>
@@ -438,10 +477,10 @@ function Detail({ block, onBack }) {
       <div className="intro">
         <ImageGallery block={block} />
         <section>
-          <h2>这个单块做什么</h2>
+          <h2>音色与用途</h2>
           <p>{block.description}</p>
           {block.aliases.length > 0 && (
-            <p className="aliases">也可搜索：{block.aliases.join("、")}</p>
+            <p className="aliases">别名：{block.aliases.join("、")}</p>
           )}
           <div className="evidence">
             <span
@@ -453,9 +492,10 @@ function Detail({ block, onBack }) {
           </div>
         </section>
       </div>
-      <ParameterTable block={block} />
+      {block.setup && <section className="setup-note"><h2>调节顺序 <small>使用参考</small></h2><p>{block.setup}</p></section>}
+      <ParameterTable key={block.id} block={block} />
       <section className="provenance">
-        <h2>资料来源与使用提醒</h2>
+        <h2>资料与版本</h2>
         <p>{block.note}</p>
         <div className="source-links">
           {block.sources.map((s) => (
@@ -465,7 +505,7 @@ function Detail({ block, onBack }) {
           ))}
         </div>
         <small>
-          核对：{data.updated}
+          清单：{data.updated} · 说明修订：{data.contentUpdated || data.updated}
           {block.version
             ? " · 插件 " + block.version
             : " · 原厂清单 KosmOS " + data.firmware}
@@ -478,7 +518,7 @@ function Detail({ block, onBack }) {
           </small>
         )}
       </section>
-      <footer>这是中文查阅工具，不会控制或修改你的 Anagram。</footer>
+      <footer>非官方中文参考 · 不含设备控制功能</footer>
     </main>
   );
 }
@@ -513,7 +553,7 @@ function About({ close }) {
         <button className="about-close" onClick={close} aria-label="关闭说明">
           <X size={20} />
         </button>
-        <h2>这份图鉴收录了什么</h2>
+        <h2>收录范围</h2>
         <p>
           截至 {data.updated}，按官方 KosmOS {data.firmware} 清单收录{" "}
           <strong>121 个原厂条目</strong>，以及官方 Marketplace 的{" "}
@@ -533,6 +573,10 @@ function About({ close }) {
           名称变化可通过旧名搜索。原厂单块图片取自 Darkglass Suite
           6.10.0，扩展图片取自官方商店；未分配独立封面的艺术家 IR
           使用系列共用图并注明。网站不提供付费插件文件，不收集你的设备数据。
+        </p>
+        <p>
+          面板定位按图片中的完整英文标签匹配，不按相似含义猜测位置。外观图不代表完整参数页。
+          功能说明附资料依据；调节与听感为编辑参考，尚未核实的版本差异保留注明。
         </p>
         <p>
           <SourceLink url={REPO}>查看源码／提交纠错</SourceLink>

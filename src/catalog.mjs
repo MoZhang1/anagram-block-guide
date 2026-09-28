@@ -33,6 +33,7 @@ export function searchText(b) {
           c.name,
           c.group,
           c.description,
+          c.adjustment,
           ...(c.options || []).map((o) => o.label),
         ].join(" "),
       ),
@@ -56,7 +57,7 @@ export function filterBlocks(
       (origin === "全部来源" || b.origin === origin) &&
       (cost === "全部" || b.cost === cost) &&
       (coverage === "全部资料" ||
-        (coverage === "有面板说明"
+        (coverage === "可图文定位" ? b.controls.some(c => c.panelRefs?.length) : coverage === "有面板说明"
           ? b.controls.length > 0
           : b.controls.length === 0)) &&
       words.every((w) => searchText(b).includes(w)),
@@ -72,7 +73,7 @@ export function readRoute(hash) {
       : "全部单块",
     origin: origins.includes(p.get("origin")) ? p.get("origin") : "全部来源",
     cost: costs.includes(p.get("cost")) ? p.get("cost") : "全部",
-    coverage: ["有面板说明", "面板待核实"].includes(p.get("coverage"))
+    coverage: ["有面板说明", "可图文定位", "面板待核实"].includes(p.get("coverage"))
       ? p.get("coverage")
       : "全部资料",
   };
