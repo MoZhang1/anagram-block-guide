@@ -309,13 +309,21 @@ input::placeholder {
   flex-shrink: 0;
 }
 select {
+  /* Native menu painting clips the pixel font's ascenders on macOS. */
+  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   min-width: 0;
   border: 3px solid var(--line);
   border-radius: 4px;
   background-color: #cce3bd;
-  padding: 7px 24px 7px 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%23143d30' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding: 0 32px 0 12px;
   font-size: var(--pixel);
+  line-height: 1.5;
   height: 52px;
   box-shadow: inset 2px 2px #e6f0d2;
   cursor: pointer;
@@ -1743,6 +1751,34 @@ select {
   .sensor {
     width: 86px;
     height: 86px;
+  }
+}
+@media (max-width: 1000px) {
+  /* Long names such as Guitar Essentials must fit without truncation. */
+  .primary-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .advanced-filters > label:not(.check-field) {
+    grid-column: 1 / -1;
+  }
+  .advanced-filters .check-field {
+    white-space: nowrap;
+  }
+}
+@media (max-width: 360px) {
+  .speaker {
+    display: none;
+  }
+  .device-keys {
+    gap: 8px;
+    margin-inline: 0;
+  }
+  .brand {
+    font-size: 22px;
+  }
+  .advanced-filters {
+    font-size: 14px;
+    gap: 8px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
