@@ -1,0 +1,1400 @@
+{
+  "factory-harmonic-booster": {
+    "src": "images/pixel/factory-harmonic-booster.png",
+    "source": "images/factory/factory-harmonic-booster.webp",
+    "sourceSha256": "7d0c798585171e0e85e3bb93bf54fe589451dfe6e17fe9eaab4795f7372cbd88",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-leo-bass": {
+    "src": "images/pixel/factory-leo-bass.png",
+    "source": "images/factory/factory-leo-bass.webp",
+    "sourceSha256": "322a79e402b799af63053eee38b41536b75d7053f67f00e2bff5be99a2a8349d",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-jim-bass": {
+    "src": "images/pixel/factory-jim-bass.png",
+    "source": "images/factory/factory-jim-bass.webp",
+    "sourceSha256": "803f915beb0394de5dbecfdf605954a437a4d5a4e56ea0c8d11e50ce3f8358df",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-gentle": {
+    "src": "images/pixel/factory-gentle.png",
+    "source": "images/factory/factory-gentle.webp",
+    "sourceSha256": "c42a07b1ae31b0f07c08bd6877612cdc4979e330bba4fa8252e5457c6b1f2f7e",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-70s-peggy": {
+    "src": "images/pixel/factory-70s-peggy.png",
+    "source": "images/factory/factory-70s-peggy.webp",
+    "sourceSha256": "9c1c43d714ab9582d11d4483c7db7ca38e1ef7be58938a9dd8b422e61b20c93a",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-peggy-fliptop": {
+    "src": "images/pixel/factory-peggy-fliptop.png",
+    "source": "images/factory/factory-peggy-fliptop.webp",
+    "sourceSha256": "c79cd2b8d8b917e8b10110c6da75d93be2e0f4a73703fd7369b2f0728dbaa8e8",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-peggy-classic": {
+    "src": "images/pixel/factory-peggy-classic.png",
+    "source": "images/factory/factory-peggy-classic.webp",
+    "sourceSha256": "3e7b7895b0e9bae9ecb0990d7451c1cdd167f7f14c10b78c54069772c4ef2b29",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-super-california": {
+    "src": "images/pixel/factory-super-california.png",
+    "source": "images/factory/factory-super-california.webp",
+    "sourceSha256": "657c08faf7a4da25aac27aa53688b78a90268e81b2671aa009c2e8a790533fe0",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-kallinen-kruukkeri": {
+    "src": "images/pixel/factory-kallinen-kruukkeri.png",
+    "source": "images/factory/factory-kallinen-kruukkeri.webp",
+    "sourceSha256": "7a9d46977ecbe43eec7865ea1578d2f5aeaa052fe3785f835786140da5b419de",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-tiny-lark-iii": {
+    "src": "images/pixel/factory-tiny-lark-iii.png",
+    "source": "images/factory/factory-tiny-lark-iii.webp",
+    "sourceSha256": "1d7b5542711a8ff408a45257c09b5d837fac2cb16d86792a1c04093f8bda74bc",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-swirl-900": {
+    "src": "images/pixel/factory-swirl-900.png",
+    "source": "images/factory/factory-swirl-900.webp",
+    "sourceSha256": "1c4c980a6a468ad01ec2f32b3bdcf4068dacf32b75dd3b23c6dcd0ed830cfee9",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-swe-tc650": {
+    "src": "images/pixel/factory-swe-tc650.png",
+    "source": "images/factory/factory-swe-tc650.webp",
+    "sourceSha256": "4425311e2441b631eb2f3d64ac00c0908eaa5c9e16900cdbdd751441561c2a22",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-modern-isobrick-750": {
+    "src": "images/pixel/factory-modern-isobrick-750.png",
+    "source": "images/factory/factory-modern-isobrick-750.webp",
+    "sourceSha256": "2f3c694879ef37cd0cbc51174763426e99005bbba2d91a421f59df664ab72f5e",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-modern-isobrick-750-od": {
+    "src": "images/pixel/factory-modern-isobrick-750-od.png",
+    "source": "images/factory/factory-modern-isobrick-750-od.webp",
+    "sourceSha256": "2d8683745ea67def72fe813b510ebaec379e27f1ba7fd8cddbcc14d8874f0f89",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-fruity-hb-500": {
+    "src": "images/pixel/factory-fruity-hb-500.png",
+    "source": "images/factory/factory-fruity-hb-500.webp",
+    "sourceSha256": "b14c95cb23d9ff57679aa8a8404d077dedb468cd8ddc9bb64514651d53a8a73f",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-black-and-yellow-4x10": {
+    "src": "images/pixel/factory-black-and-yellow-4x10.png",
+    "source": "images/factory/factory-black-and-yellow-4x10.webp",
+    "sourceSha256": "9c07b0895382bc65acc712208a0bc667e9aab926b2458eaf8710b7f2f7fd5df7",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-california-bass-4x10": {
+    "src": "images/pixel/factory-california-bass-4x10.png",
+    "source": "images/factory/factory-california-bass-4x10.webp",
+    "sourceSha256": "71c891d0376d4e82ad40c3d425ff363c7fbff0f46c4e54e5da9bfbe8f0bef191",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-darkglass-neo-2x12": {
+    "src": "images/pixel/factory-darkglass-neo-2x12.png",
+    "source": "images/factory/factory-darkglass-neo-2x12.webp",
+    "sourceSha256": "810d23e86579e0434c850e34cbd17244516e9770952ae7ca70e00752f246fbeb",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-darkglass-neo-4x10": {
+    "src": "images/pixel/factory-darkglass-neo-4x10.png",
+    "source": "images/factory/factory-darkglass-neo-4x10.webp",
+    "sourceSha256": "28e493b19691bcb24c027414a76c9e6d932424288cccb637532431bad062ceba",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-fruity-bass-1x15": {
+    "src": "images/pixel/factory-fruity-bass-1x15.png",
+    "source": "images/factory/factory-fruity-bass-1x15.webp",
+    "sourceSha256": "cad04b0cef4d3960be81f3f2a0095817762ef6b9e4a3de57dc5528c343881df6",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-fruity-bass-4x10": {
+    "src": "images/pixel/factory-fruity-bass-4x10.png",
+    "source": "images/factory/factory-fruity-bass-4x10.webp",
+    "sourceSha256": "10ade241af8c9a0251be277a5e49983d22b6e63a1f8b93c8a45b725a67b5b9c7",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-fruity-bass-8x10": {
+    "src": "images/pixel/factory-fruity-bass-8x10.png",
+    "source": "images/factory/factory-fruity-bass-8x10.webp",
+    "sourceSha256": "be808c623cf6fec8ce1aa47447a3a93e2eec16210c6d1addd7a9a2cd74dc0ad1",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-garden-of-1x18": {
+    "src": "images/pixel/factory-garden-of-1x18.png",
+    "source": "images/factory/factory-garden-of-1x18.webp",
+    "sourceSha256": "397a08ae7ebb0fd1de99dd3340b05c2346135279d5b389cfc191756ba5168bee",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-garden-of-4x10": {
+    "src": "images/pixel/factory-garden-of-4x10.png",
+    "source": "images/factory/factory-garden-of-4x10.webp",
+    "sourceSha256": "5a9247e88fd77bd01e35c0d79a458d0247473e4c19683c03c37186888e6d2ff2",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-modern-bass-1x15": {
+    "src": "images/pixel/factory-modern-bass-1x15.png",
+    "source": "images/factory/factory-modern-bass-1x15.webp",
+    "sourceSha256": "e3397f6c25fce9a864f9e40accd6bb540ec9af7d4add3a2d37c72fa843138618",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-modern-bass-2x10": {
+    "src": "images/pixel/factory-modern-bass-2x10.png",
+    "source": "images/factory/factory-modern-bass-2x10.webp",
+    "sourceSha256": "7d883af11a998d9fdb61b7043c8f3b501ec65a879a1baa882cb6b12180dcf871",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-modern-bass-4x10": {
+    "src": "images/pixel/factory-modern-bass-4x10.png",
+    "source": "images/factory/factory-modern-bass-4x10.webp",
+    "sourceSha256": "313208a42df4390067ef077ace1416becc79cbd2c5190193f9f2ad5171c48a32",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-modern-bass-8x10": {
+    "src": "images/pixel/factory-modern-bass-8x10.png",
+    "source": "images/factory/factory-modern-bass-8x10.webp",
+    "sourceSha256": "0378d183762aaefadb5ae4032b2176ded7a5343b0e4e8bcc36ea6eebbf23a1bf",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-mountainino-6x10": {
+    "src": "images/pixel/factory-mountainino-6x10.png",
+    "source": "images/factory/factory-mountainino-6x10.webp",
+    "sourceSha256": "03f58e82ca84af02414c8e6b3d26d0608b6ba7a41260cd89e7a51154488f960f",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-peggy-1x15": {
+    "src": "images/pixel/factory-peggy-1x15.png",
+    "source": "images/factory/factory-peggy-1x15.webp",
+    "sourceSha256": "a8cb12cfc99d01996e6a351cfe4e34c9b7e9d16126d83b097799077a4d0cf751",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-peggy-4x10": {
+    "src": "images/pixel/factory-peggy-4x10.png",
+    "source": "images/factory/factory-peggy-4x10.webp",
+    "sourceSha256": "f6c89d6c10aeb89e0958a07ee5cb944499e6470c50364388f4c01fc7c5c3def5",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-peggy-8x10": {
+    "src": "images/pixel/factory-peggy-8x10.png",
+    "source": "images/factory/factory-peggy-8x10.webp",
+    "sourceSha256": "7b4d113dde28592a4653a7a88b83706e743f950fc20001074fb7b90e229f6498",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-swirl-1x15": {
+    "src": "images/pixel/factory-swirl-1x15.png",
+    "source": "images/factory/factory-swirl-1x15.webp",
+    "sourceSha256": "9d506b7a2f40af932b2fe940e3c52fe7c89c82eaba8327157e63154f254dad93",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-swirl-4x10": {
+    "src": "images/pixel/factory-swirl-4x10.png",
+    "source": "images/factory/factory-swirl-4x10.webp",
+    "sourceSha256": "384fa951b8557fafe3310c4e4798b9a55ebc6973638d8442e082a12429c19ed2",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-swirl-8x10": {
+    "src": "images/pixel/factory-swirl-8x10.png",
+    "source": "images/factory/factory-swirl-8x10.webp",
+    "sourceSha256": "94814cb3909d633e4b029c99faf65aea414d74df2bbe62f3eede0c69e9da3769",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-vintage-peggy-8x10": {
+    "src": "images/pixel/factory-vintage-peggy-8x10.png",
+    "source": "images/factory/factory-vintage-peggy-8x10.webp",
+    "sourceSha256": "182e3c34415a26ebd9ab02c59a1de56340f058c11879ce92340c0d2cfdab0dc7",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-peggy-fliptop-1x15": {
+    "src": "images/pixel/factory-peggy-fliptop-1x15.png",
+    "source": "images/factory/factory-peggy-fliptop-1x15.webp",
+    "sourceSha256": "40854f62c33a2966ddc5436e19cf252213ebeb9f294de4838c21302872e6a494",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-california-combo-2x12": {
+    "src": "images/pixel/factory-california-combo-2x12.png",
+    "source": "images/factory/factory-california-combo-2x12.webp",
+    "sourceSha256": "d15a8570f53def7ab091cbd94340fbd4f0a1ebdfa1242e8de2460f49a79af815",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-fashionista-4x12": {
+    "src": "images/pixel/factory-fashionista-4x12.png",
+    "source": "images/factory/factory-fashionista-4x12.webp",
+    "sourceSha256": "1fa50bf1ce6fd432d9ce041a9ae495841822fc8b4865861fe818fba417432485",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-modern-4x12": {
+    "src": "images/pixel/factory-modern-4x12.png",
+    "source": "images/factory/factory-modern-4x12.webp",
+    "sourceSha256": "414f253a87972ed32ea609f1c93b7a02b75289f9fed454f867986ad5a08ddb42",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-panzer-4x12": {
+    "src": "images/pixel/factory-panzer-4x12.png",
+    "source": "images/factory/factory-panzer-4x12.webp",
+    "sourceSha256": "5515db02434c9bd5856306840654a37357ea560ec8983f63f4109b12b6889cfc",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-topper-2x12-combo": {
+    "src": "images/pixel/factory-topper-2x12-combo.png",
+    "source": "images/factory/factory-topper-2x12-combo.webp",
+    "sourceSha256": "35cd5150c44c1ab2925beade79c7992a40eb090a11bfca40ac3fd1c247531cb1",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-vintage-london-4x12": {
+    "src": "images/pixel/factory-vintage-london-4x12.png",
+    "source": "images/factory/factory-vintage-london-4x12.webp",
+    "sourceSha256": "5d4141a496fd200368ac9a42f8d48ea9901adc015b6c5f7d215333c3e2c5f4dc",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-dave-beta52a": {
+    "src": "images/pixel/factory-dave-beta52a.png",
+    "source": "images/factory/factory-dave-beta52a.webp",
+    "sourceSha256": "649f58a2ef192d44c5017110bbe22de643667917816db65947016360718d2974",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-dave-d12e": {
+    "src": "images/pixel/factory-dave-d12e.png",
+    "source": "images/factory/factory-dave-d12e.webp",
+    "sourceSha256": "649f58a2ef192d44c5017110bbe22de643667917816db65947016360718d2974",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-dave-md421": {
+    "src": "images/pixel/factory-dave-md421.png",
+    "source": "images/factory/factory-dave-md421.webp",
+    "sourceSha256": "649f58a2ef192d44c5017110bbe22de643667917816db65947016360718d2974",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-dave-md441": {
+    "src": "images/pixel/factory-dave-md441.png",
+    "source": "images/factory/factory-dave-md441.webp",
+    "sourceSha256": "649f58a2ef192d44c5017110bbe22de643667917816db65947016360718d2974",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-forrester-bitey": {
+    "src": "images/pixel/factory-forrester-bitey.png",
+    "source": "images/factory/factory-forrester-bitey.webp",
+    "sourceSha256": "910a51722df0acad67bc020030533e5850a34ead619ee551a11461ceedfc3778",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-forrester-clear": {
+    "src": "images/pixel/factory-forrester-clear.png",
+    "source": "images/factory/factory-forrester-clear.webp",
+    "sourceSha256": "910a51722df0acad67bc020030533e5850a34ead619ee551a11461ceedfc3778",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-forrester-monster": {
+    "src": "images/pixel/factory-forrester-monster.png",
+    "source": "images/factory/factory-forrester-monster.webp",
+    "sourceSha256": "910a51722df0acad67bc020030533e5850a34ead619ee551a11461ceedfc3778",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-forrester-punch": {
+    "src": "images/pixel/factory-forrester-punch.png",
+    "source": "images/factory/factory-forrester-punch.webp",
+    "sourceSha256": "910a51722df0acad67bc020030533e5850a34ead619ee551a11461ceedfc3778",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-forrester-thick": {
+    "src": "images/pixel/factory-forrester-thick.png",
+    "source": "images/factory/factory-forrester-thick.webp",
+    "sourceSha256": "910a51722df0acad67bc020030533e5850a34ead619ee551a11461ceedfc3778",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-jon-2x12": {
+    "src": "images/pixel/factory-jon-2x12.png",
+    "source": "images/factory/factory-jon-2x12.webp",
+    "sourceSha256": "810d23e86579e0434c850e34cbd17244516e9770952ae7ca70e00752f246fbeb",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-jon-4x10": {
+    "src": "images/pixel/factory-jon-4x10.png",
+    "source": "images/factory/factory-jon-4x10.webp",
+    "sourceSha256": "28e493b19691bcb24c027414a76c9e6d932424288cccb637532431bad062ceba",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-jon-8x10": {
+    "src": "images/pixel/factory-jon-8x10.png",
+    "source": "images/factory/factory-jon-8x10.webp",
+    "sourceSha256": "1889dc24a2eab85087d307962ebc1bd0c046ebacd24bb80208973a7b5191d465",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-nolly-blend": {
+    "src": "images/pixel/factory-nolly-blend.png",
+    "source": "images/factory/factory-nolly-blend.webp",
+    "sourceSha256": "493b7bffa522697a21a7145cac96db6f2f5fd4dcb1e19abc825d9f535879ebcb",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-nolly-allthemids": {
+    "src": "images/pixel/factory-nolly-allthemids.png",
+    "source": "images/factory/factory-nolly-allthemids.webp",
+    "sourceSha256": "493b7bffa522697a21a7145cac96db6f2f5fd4dcb1e19abc825d9f535879ebcb",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-nolly-scoopydoo": {
+    "src": "images/pixel/factory-nolly-scoopydoo.png",
+    "source": "images/factory/factory-nolly-scoopydoo.webp",
+    "sourceSha256": "493b7bffa522697a21a7145cac96db6f2f5fd4dcb1e19abc825d9f535879ebcb",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-nolly-rolledoff": {
+    "src": "images/pixel/factory-nolly-rolledoff.png",
+    "source": "images/factory/factory-nolly-rolledoff.webp",
+    "sourceSha256": "493b7bffa522697a21a7145cac96db6f2f5fd4dcb1e19abc825d9f535879ebcb",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-nolly-vintagestack": {
+    "src": "images/pixel/factory-nolly-vintagestack.png",
+    "source": "images/factory/factory-nolly-vintagestack.webp",
+    "sourceSha256": "493b7bffa522697a21a7145cac96db6f2f5fd4dcb1e19abc825d9f535879ebcb",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-nolly-mega-meld-ir": {
+    "src": "images/pixel/factory-nolly-mega-meld-ir.png",
+    "source": "images/factory/factory-nolly-mega-meld-ir.webp",
+    "sourceSha256": "493b7bffa522697a21a7145cac96db6f2f5fd4dcb1e19abc825d9f535879ebcb",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-entropia": {
+    "src": "images/pixel/factory-entropia.png",
+    "source": "images/factory/factory-entropia.webp",
+    "sourceSha256": "6105e05c52df2a52689a05355cf1d44ff7c657afcfafa5f444c4c89f9082daa4",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-microtubes-b3k": {
+    "src": "images/pixel/factory-microtubes-b3k.png",
+    "source": "images/factory/factory-microtubes-b3k.webp",
+    "sourceSha256": "e31e0da23873756d0c7c2e92ad9e661ead091c33fc7f7cf2af8ea616b68c48d4",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-vintage-microtubes": {
+    "src": "images/pixel/factory-vintage-microtubes.png",
+    "source": "images/factory/factory-vintage-microtubes.webp",
+    "sourceSha256": "7071b79829d4d08e0c0f60390aa6d788709d730feac4d6063a95664fbcf5d15f",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-alpha-omicron": {
+    "src": "images/pixel/factory-alpha-omicron.png",
+    "source": "images/factory/factory-alpha-omicron.webp",
+    "sourceSha256": "3282952c75c689440ff044574f54fd78f27280a2da36ce19fa4717b9fdd8fc78",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-duality-fuzz": {
+    "src": "images/pixel/factory-duality-fuzz.png",
+    "source": "images/factory/factory-duality-fuzz.webp",
+    "sourceSha256": "3255d46392649cf04ba581d007a2b5ef6a1ba1b7d8fb6ddeeca26789ae6dc167",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-chinchilla": {
+    "src": "images/pixel/factory-chinchilla.png",
+    "source": "images/factory/factory-chinchilla.webp",
+    "sourceSha256": "589f88f5a98097a6372e67458d50bcd1f98acf6a6860b638d888eb492759e85e",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-microtubes-x": {
+    "src": "images/pixel/factory-microtubes-x.png",
+    "source": "images/factory/factory-microtubes-x.webp",
+    "sourceSha256": "3ff90c3590d1c980c631cc72e77f7730c706e9801be33edd8ebd9cbc58d2d317",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-atomic-sans": {
+    "src": "images/pixel/factory-atomic-sans.png",
+    "source": "images/factory/factory-atomic-sans.webp",
+    "sourceSha256": "3fe9c5f8f4113fb4a1c273ef0c49cdb6f31f94c0b73e289dc8005679c374f663",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-green-pirate-fuzz": {
+    "src": "images/pixel/factory-green-pirate-fuzz.png",
+    "source": "images/factory/factory-green-pirate-fuzz.webp",
+    "sourceSha256": "41ece5e318135cd678b2b84aee03071e2bd640db339fe4cbd836ce44e72f58b5",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-bee-kolme-od": {
+    "src": "images/pixel/factory-bee-kolme-od.png",
+    "source": "images/factory/factory-bee-kolme-od.webp",
+    "sourceSha256": "eb8dd7048fc26063a097787cb19b81eb357fa8375ffcc1d8da20dd9931cd305f",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-arc-dreamer": {
+    "src": "images/pixel/factory-arc-dreamer.png",
+    "source": "images/factory/factory-arc-dreamer.webp",
+    "sourceSha256": "42a896dfcabdf4c9cb776dfbf9a36ef7176aa6ab70d1ffeb645f53157551f804",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-mood-fuzz": {
+    "src": "images/pixel/factory-mood-fuzz.png",
+    "source": "images/factory/factory-mood-fuzz.webp",
+    "sourceSha256": "f4efe29d2e332c7f6de90c0888a283e6a2e32a6ef8b0f8dc13bbd93eb2c8eea2",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-ignissor": {
+    "src": "images/pixel/factory-ignissor.png",
+    "source": "images/factory/factory-ignissor.webp",
+    "sourceSha256": "2b7d4ffe0331663b977bcf7e13fd7c69f787ce50ea5760c872bc461307c4b06a",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-fet-compressor": {
+    "src": "images/pixel/factory-fet-compressor.png",
+    "source": "images/factory/factory-fet-compressor.webp",
+    "sourceSha256": "fd022e039213364bbac6d0406ae74e289ddd60716a7172951589ea730947279b",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-bus-compressor": {
+    "src": "images/pixel/factory-bus-compressor.png",
+    "source": "images/factory/factory-bus-compressor.webp",
+    "sourceSha256": "323e4bc1ab3c513de9ec6c6e724b15d2d6f5193216fe1de357815244f7294a5c",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-compressor-limiter": {
+    "src": "images/pixel/factory-compressor-limiter.png",
+    "source": "images/factory/factory-compressor-limiter.webp",
+    "sourceSha256": "bd7f336b88f5995090ab97051c3d6caf9b2e0b4aaf821495c6fa70b7682a457f",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-amp-eq": {
+    "src": "images/pixel/factory-amp-eq.png",
+    "source": "images/factory/factory-amp-eq.webp",
+    "sourceSha256": "85b58dd837037d16c77e579b0fb0fb2a385f3638999f1f0eb2bbc33b041e4d65",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-darkglass-6-band-eq": {
+    "src": "images/pixel/factory-darkglass-6-band-eq.png",
+    "source": "images/factory/factory-darkglass-6-band-eq.webp",
+    "sourceSha256": "2c94c606922a278d632f8b12b3abe838570cb81cf92505eaf758031e0a35d268",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-generic-6-band-eq": {
+    "src": "images/pixel/factory-generic-6-band-eq.png",
+    "source": "images/factory/factory-generic-6-band-eq.webp",
+    "sourceSha256": "be82d4df40380a32e50e7e513f0f5bcffcd61522d855254258d19293d0889738",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-parametric-eq": {
+    "src": "images/pixel/factory-parametric-eq.png",
+    "source": "images/factory/factory-parametric-eq.webp",
+    "sourceSha256": "949207acdaf0c50c818e9ae4f393866c09dd167eb0b5fca0acf3def2bdac6010",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-hi-pass-lo-pass-filter": {
+    "src": "images/pixel/factory-hi-pass-lo-pass-filter.png",
+    "source": "images/factory/factory-hi-pass-lo-pass-filter.webp",
+    "sourceSha256": "1d5131253a95eba2cc4fc33bf4c38a87aebdcaf4168083cc7a4e7412479b31cf",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-hi-pass-filter": {
+    "src": "images/pixel/factory-hi-pass-filter.png",
+    "source": "images/factory/factory-hi-pass-filter.webp",
+    "sourceSha256": "b4c77145294e1e8ed545803fa6f0296a8da36f35aea7021ab7d8e2671ede4814",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-lo-pass-filter": {
+    "src": "images/pixel/factory-lo-pass-filter.png",
+    "source": "images/factory/factory-lo-pass-filter.webp",
+    "sourceSha256": "224dc8a2e5f1d0d72467316afb1f1f952d51e26c044c60739136ee40dc941a4e",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-gravitron": {
+    "src": "images/pixel/factory-gravitron.png",
+    "source": "images/factory/factory-gravitron.webp",
+    "sourceSha256": "f27021170dfda79a08bb9af7be5512ed624dcd974460e8d6a0dfaf188564253d",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-mo-erf-r": {
+    "src": "images/pixel/factory-mo-erf-r.png",
+    "source": "images/factory/factory-mo-erf-r.webp",
+    "sourceSha256": "c357eac1e55d6bdf49cf7e528d4685b6a0e83ff358ffb811aad3e7f44eadad62",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-noise-suppressor": {
+    "src": "images/pixel/factory-noise-suppressor.png",
+    "source": "images/factory/factory-noise-suppressor.webp",
+    "sourceSha256": "6dbbd0ab5cd55dd6025cdb8e3511f0195ffd51d62e9e35930d0be67c696fe50e",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-nembrini-audio-noise-gate": {
+    "src": "images/pixel/factory-nembrini-audio-noise-gate.png",
+    "source": "images/factory/factory-nembrini-audio-noise-gate.webp",
+    "sourceSha256": "e3be3416d10c8d0bb1587540888ba6ecd09e6d1b1a9dad9ce4daba8370a289bf",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-wauwa": {
+    "src": "images/pixel/factory-wauwa.png",
+    "source": "images/factory/factory-wauwa.webp",
+    "sourceSha256": "33351f47bf5fd2cf91efa0fbe283ef6cef718b15342954ebebc2e17e0be9d718",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-axioma": {
+    "src": "images/pixel/factory-axioma.png",
+    "source": "images/factory/factory-axioma.webp",
+    "sourceSha256": "857ac961e1971ad62ce6aed4df1f2dd60deb425c120b6d8653e9354e00203213",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-mint-chocolate-chorus": {
+    "src": "images/pixel/factory-mint-chocolate-chorus.png",
+    "source": "images/factory/factory-mint-chocolate-chorus.webp",
+    "sourceSha256": "a1f32d419ffe823d993df0fa175e37cdc26e5ab6c7b00534083dbef7970a506a",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-flamingo-flanger": {
+    "src": "images/pixel/factory-flamingo-flanger.png",
+    "source": "images/factory/factory-flamingo-flanger.webp",
+    "sourceSha256": "6aec7992522d76761f08e5859724b67fee5adfadbf332b03fca5c6fde137a01a",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-sublime-octaver": {
+    "src": "images/pixel/factory-sublime-octaver.png",
+    "source": "images/factory/factory-sublime-octaver.webp",
+    "sourceSha256": "7d664dd09035c4d5f4e2201ff36b3198633a7428006dd321ad060e94678e5fc2",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-sublemon-octaver": {
+    "src": "images/pixel/factory-sublemon-octaver.png",
+    "source": "images/factory/factory-sublemon-octaver.webp",
+    "sourceSha256": "468474d8512163cb95cc88792ac6e783dce1d2b3a08c27953ee52588ca76a6f0",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-subcitri-octaver": {
+    "src": "images/pixel/factory-subcitri-octaver.png",
+    "source": "images/factory/factory-subcitri-octaver.webp",
+    "sourceSha256": "13116e37fb617bf7cd04f8aeb4f004b48f9039b107f7d497a0b95dfeef8c0cf1",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-pitch-shifter": {
+    "src": "images/pixel/factory-pitch-shifter.png",
+    "source": "images/factory/factory-pitch-shifter.webp",
+    "sourceSha256": "2b57bbd53f99a6e374f5797f0a6985a73fd6b1121ba285f3703a9a77e45c46b4",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-pharos-phaser": {
+    "src": "images/pixel/factory-pharos-phaser.png",
+    "source": "images/factory/factory-pharos-phaser.webp",
+    "sourceSha256": "013615cebfca5e882400f3e98f54d4daa4d4920e8e6ab4f2896bbd6a97fe85e8",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-tremora-tremolo": {
+    "src": "images/pixel/factory-tremora-tremolo.png",
+    "source": "images/factory/factory-tremora-tremolo.webp",
+    "sourceSha256": "a6ba0eeeedc84a38383dcef81b6ee9c043589751ed194796b54410b7fc5089d6",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-vibralis-vibrato": {
+    "src": "images/pixel/factory-vibralis-vibrato.png",
+    "source": "images/factory/factory-vibralis-vibrato.webp",
+    "sourceSha256": "5e1ef52d91befad7fcac901364c467cc1f859561b3336268d85de8cd69a9a33d",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-pitch-bender": {
+    "src": "images/pixel/factory-pitch-bender.png",
+    "source": "images/factory/factory-pitch-bender.webp",
+    "sourceSha256": "f8bf9e17cc5b0324dda482b8d199eeb629cef0383e192b41c4056fabe6fa1670",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-digital-delay": {
+    "src": "images/pixel/factory-digital-delay.png",
+    "source": "images/factory/factory-digital-delay.webp",
+    "sourceSha256": "e1e058d92fd3b9af73a9413ea3ba768378324698f901b9650eb53b2046a3db77",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-analog-delay": {
+    "src": "images/pixel/factory-analog-delay.png",
+    "source": "images/factory/factory-analog-delay.webp",
+    "sourceSha256": "cb20e1e85c939fe22bcaa26c53c4786a26130d01fbbf0a404ca637873e557de4",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-modulation-delay": {
+    "src": "images/pixel/factory-modulation-delay.png",
+    "source": "images/factory/factory-modulation-delay.webp",
+    "sourceSha256": "c7fa1b69df056e2401dafec49718239cedf83100f6a353b2a04941df17f7cdb5",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-room-reverb": {
+    "src": "images/pixel/factory-room-reverb.png",
+    "source": "images/factory/factory-room-reverb.webp",
+    "sourceSha256": "c100716a36b08e21693b56046a8923548850d828370c6ef3923c570dd4e42b6a",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-plate-reverb": {
+    "src": "images/pixel/factory-plate-reverb.png",
+    "source": "images/factory/factory-plate-reverb.webp",
+    "sourceSha256": "7a99b4b91dcbabc6ff06593d430be2e3cd6a75265eeccf3533b74fe60dba0757",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-hall-reverb": {
+    "src": "images/pixel/factory-hall-reverb.png",
+    "source": "images/factory/factory-hall-reverb.webp",
+    "sourceSha256": "a7225af59c4809f708e3ebfd99f7b0540867c37eaf9b50c2209d5f9a6b2f619b",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-shimmer-reverb": {
+    "src": "images/pixel/factory-shimmer-reverb.png",
+    "source": "images/factory/factory-shimmer-reverb.webp",
+    "sourceSha256": "ed145b309bcdf63333a23cd1133bd4d6d55bc02286dae9f1754d82d442db2dae",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-spring-reverb": {
+    "src": "images/pixel/factory-spring-reverb.png",
+    "source": "images/factory/factory-spring-reverb.webp",
+    "sourceSha256": "9d77088ffac1c74cfec82e219d4e78ec28573b41fd9a6618bda615e7b970304f",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-tone-3000": {
+    "src": "images/pixel/factory-tone-3000.png",
+    "source": "images/factory/factory-tone-3000.webp",
+    "sourceSha256": "438c1908d3eee664ada5ab3b09dc97aba82520287b84a4095968f6a3408b39dd",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-user-cabinet-ir-loader": {
+    "src": "images/pixel/factory-user-cabinet-ir-loader.png",
+    "source": "images/factory/factory-user-cabinet-ir-loader.webp",
+    "sourceSha256": "849470b38bbe342cfc96a38549b90c2f74a35787478dd780f894702bdc4c4420",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-neural-amp-loader": {
+    "src": "images/pixel/factory-neural-amp-loader.png",
+    "source": "images/factory/factory-neural-amp-loader.webp",
+    "sourceSha256": "668a676dfc9231291050ee9b2cd9000440c5426e5f9bd40399906a9d288ffdfd",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-neural-pedal-loader": {
+    "src": "images/pixel/factory-neural-pedal-loader.png",
+    "source": "images/factory/factory-neural-pedal-loader.webp",
+    "sourceSha256": "45857c6e56e5683cb1b8674804a8bb49774ba8625a75a3352feb3cef67709599",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-neural-loader": {
+    "src": "images/pixel/factory-neural-loader.png",
+    "source": "images/factory/factory-neural-loader.webp",
+    "sourceSha256": "240df640939998a3863ccd534e45017fd13805f019b724d384bb0ba2c0f52cb2",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-gain": {
+    "src": "images/pixel/factory-gain.png",
+    "source": "images/factory/factory-gain.webp",
+    "sourceSha256": "aa905a0f74d45f3d53ef73fef839a2692d6d06e44543580e4112ff29d68730e0",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-volume-pedal": {
+    "src": "images/pixel/factory-volume-pedal.png",
+    "source": "images/factory/factory-volume-pedal.webp",
+    "sourceSha256": "7fede2d9f910e8c7f96ccbf3caa37e96b8b69cf1342b2e0f6e968a637df815e2",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-output": {
+    "src": "images/pixel/factory-output.png",
+    "source": "images/factory/factory-output.webp",
+    "sourceSha256": "320ffea5e2348b527735165175d8e547f8af9df4b902fb408c5a2e5d51d585af",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-split": {
+    "src": "images/pixel/factory-split.png",
+    "source": "images/factory/factory-split.webp",
+    "sourceSha256": "455e1b55eed4b66c0f3e65b05d4cb580bc950863de9edb9ad888aa8e9138d3fb",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-merge": {
+    "src": "images/pixel/factory-merge.png",
+    "source": "images/factory/factory-merge.webp",
+    "sourceSha256": "3ffc88998fac431c003e3ae405911bc74a6adca00e33dab48ccefb7118c63d92",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-send": {
+    "src": "images/pixel/factory-send.png",
+    "source": "images/factory/factory-send.webp",
+    "sourceSha256": "0ed01047f575514fea552a3d2764c690a71370ee98fc9752fe61b553fe93d6bd",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-return": {
+    "src": "images/pixel/factory-return.png",
+    "source": "images/factory/factory-return.webp",
+    "sourceSha256": "28f136db9824f3da7696ef36af0ca2976c3f149b2a8bd119cd435029e1b0087e",
+    "method": "source-derived-40px-24color"
+  },
+  "factory-fx-loop": {
+    "src": "images/pixel/factory-fx-loop.png",
+    "source": "images/factory/factory-fx-loop.webp",
+    "sourceSha256": "e59efc1b6fa38e45e93405ec22c558b1886299533a8ae518752ed3554fe30dde",
+    "method": "source-derived-40px-24color"
+  },
+  "market-rocker-83": {
+    "src": "images/pixel/market-rocker-83.png",
+    "source": "images/market/market-rocker-83.webp",
+    "sourceSha256": "b8c072be5a40dbea938071a06e3f503923c6798d83478605ed8f2d069d82529d",
+    "method": "source-derived-40px-24color"
+  },
+  "market-lead-trilogy": {
+    "src": "images/pixel/market-lead-trilogy.png",
+    "source": "images/market/market-lead-trilogy.webp",
+    "sourceSha256": "b4f6e6d537364e886947842ea48678df767d9c5a58ee9537cc3f6bd34db957dd",
+    "method": "source-derived-40px-24color"
+  },
+  "market-plexi-breed": {
+    "src": "images/pixel/market-plexi-breed.png",
+    "source": "images/market/market-plexi-breed.webp",
+    "sourceSha256": "cb776eba4fb89d998b9a330d31302a074ea7536a467d8a07a70070a1e7906fd8",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-odd-ones": {
+    "src": "images/pixel/market-dogood-odd-ones.png",
+    "source": "images/market/market-dogood-odd-ones.webp",
+    "sourceSha256": "65b7d6eb0f4e9e20cc1829411f5228b12f90843dbfc88139bb3508b604656ba9",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-work": {
+    "src": "images/pixel/market-dogood-work.png",
+    "source": "images/market/market-dogood-work.webp",
+    "sourceSha256": "38619a5514d4117b2a04546cd6e6e7a0c8bbe2317c9fe6513bead0cda26067d6",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-paris": {
+    "src": "images/pixel/market-dogood-paris.png",
+    "source": "images/market/market-dogood-paris.webp",
+    "sourceSha256": "8c282b275fbfadd3480b4b83b28555fe0ceb6404c5fbe0ac7180e6107dbdf9c8",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-korea": {
+    "src": "images/pixel/market-dogood-korea.png",
+    "source": "images/market/market-dogood-korea.webp",
+    "sourceSha256": "d4373eb01b9c391b4d99ceb93bce9f473112198530a12b760e9435a5281b693c",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-80s-gear": {
+    "src": "images/pixel/market-dogood-80s-gear.png",
+    "source": "images/market/market-dogood-80s-gear.webp",
+    "sourceSha256": "18d0c5e4e787b6d87d751aceda57bb2d166e5ad65c69f3178c2ec95eb33aafa9",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-bm7": {
+    "src": "images/pixel/market-dogood-bm7.png",
+    "source": "images/market/market-dogood-bm7.webp",
+    "sourceSha256": "9d35db71b44fc12ad7a56134df3f00c5cad90c0f803df2a2965f97b3eeea48f1",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-dungeon": {
+    "src": "images/pixel/market-dogood-dungeon.png",
+    "source": "images/market/market-dogood-dungeon.webp",
+    "sourceSha256": "864d783457490c0724c574b57449c9894604447008547a21a1adb1628428d37d",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-grain-silo": {
+    "src": "images/pixel/market-dogood-grain-silo.png",
+    "source": "images/market/market-dogood-grain-silo.webp",
+    "sourceSha256": "fdec9c107e64c572ed86a536656655a7301827e912f385c5c1597e210f5fb528",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-springs": {
+    "src": "images/pixel/market-dogood-springs.png",
+    "source": "images/market/market-dogood-springs.webp",
+    "sourceSha256": "7a472752eac2e5d94cc793b9224b58dc94b8772c29a7d3862231f920002c6a15",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-plate-140": {
+    "src": "images/pixel/market-dogood-plate-140.png",
+    "source": "images/market/market-dogood-plate-140.webp",
+    "sourceSha256": "cf84a77b9e7a8ce4df67c4d9e2c3711cbf704d16509f7973c568d871995f0dba",
+    "method": "source-derived-40px-24color"
+  },
+  "market-rmpro": {
+    "src": "images/pixel/market-rmpro.png",
+    "source": "images/market/market-rmpro.webp",
+    "sourceSha256": "e1c70c38fe79a9c88463f3acff10dca34abfc248117120199a3f5b7cf7cf3a95",
+    "method": "source-derived-40px-24color"
+  },
+  "market-fair-mega-california-recto": {
+    "src": "images/pixel/market-fair-mega-california-recto.png",
+    "source": "images/market/market-fair-mega-california-recto.webp",
+    "sourceSha256": "a1d831a4d1504fe5b436c0a696e81183f69191f35e240b74f161aa0839f1f69e",
+    "method": "source-derived-40px-24color"
+  },
+  "market-fair-marsh-1960": {
+    "src": "images/pixel/market-fair-marsh-1960.png",
+    "source": "images/market/market-fair-marsh-1960.webp",
+    "sourceSha256": "0dc969a29b173be2987d9adba08f751a98299bca368b1c32dd0e81c0c1255d0a",
+    "method": "source-derived-40px-24color"
+  },
+  "market-fair-eng-212": {
+    "src": "images/pixel/market-fair-eng-212.png",
+    "source": "images/market/market-fair-eng-212.webp",
+    "sourceSha256": "31f306e2d4594433574f36d7e96133fa6f35d3135e3c54ce60deebbb72268307",
+    "method": "source-derived-40px-24color"
+  },
+  "market-gaffa": {
+    "src": "images/pixel/market-gaffa.png",
+    "source": "images/market/market-gaffa.webp",
+    "sourceSha256": "aa8c155642634195c520d9aa9542ab2fc572e3b0d339ebebca8154df6c94e1f8",
+    "method": "source-derived-40px-24color"
+  },
+  "market-phantom-zone": {
+    "src": "images/pixel/market-phantom-zone.png",
+    "source": "images/market/market-phantom-zone.webp",
+    "sourceSha256": "b7764d0a0c6ed6323efdcf9f128ba8b36b6bc00de75e888d63b4d517c62d7dc4",
+    "method": "source-derived-40px-24color"
+  },
+  "market-overtone-wah-1": {
+    "src": "images/pixel/market-overtone-wah-1.png",
+    "source": "images/market/market-overtone-wah-1.webp",
+    "sourceSha256": "36b03095873b7c030bd305c9fcb81577e47e07cf9a30f1f75aed4a38402a915b",
+    "method": "source-derived-40px-24color"
+  },
+  "market-overtone-ph-1": {
+    "src": "images/pixel/market-overtone-ph-1.png",
+    "source": "images/market/market-overtone-ph-1.webp",
+    "sourceSha256": "3b1522b3b69358763c05b620a6a223fcda41f126863a370853a91dd079810cd2",
+    "method": "source-derived-40px-24color"
+  },
+  "market-overtone-cr-1": {
+    "src": "images/pixel/market-overtone-cr-1.png",
+    "source": "images/market/market-overtone-cr-1.webp",
+    "sourceSha256": "4ab5c3daed85a02b89c9b323e57d54c7c4aa76e994cfb5890b3ad0229ddd440b",
+    "method": "source-derived-40px-24color"
+  },
+  "market-shiroverb-mkii": {
+    "src": "images/pixel/market-shiroverb-mkii.png",
+    "source": "images/market/market-shiroverb-mkii.webp",
+    "sourceSha256": "708503c783bdea53a1ee9c328a9de56e2249a76a953185d586792f495b9c5871",
+    "method": "source-derived-40px-24color"
+  },
+  "market-overtone-dt-1": {
+    "src": "images/pixel/market-overtone-dt-1.png",
+    "source": "images/market/market-overtone-dt-1.webp",
+    "sourceSha256": "8222427710dc0debbc7a926fe5ed6133f1f408a7f9dcd1d160dc7d875ed2059c",
+    "method": "source-derived-40px-24color"
+  },
+  "market-fair-modern-rock": {
+    "src": "images/pixel/market-fair-modern-rock.png",
+    "source": "images/market/market-fair-modern-rock.webp",
+    "sourceSha256": "625e8c2e9a3aa850bcc6e0cb0f27e044114211985bf761fbeaf0f9818dd18b74",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dogood-reverbs": {
+    "src": "images/pixel/market-dogood-reverbs.png",
+    "source": "images/market/market-dogood-reverbs.webp",
+    "sourceSha256": "0127129c4c77869c66caf6c60ac365534547d8f28b3467639f9244b48a9af19d",
+    "method": "source-derived-40px-24color"
+  },
+  "market-pedal-taster": {
+    "src": "images/pixel/market-pedal-taster.png",
+    "source": "images/market/market-pedal-taster.webp",
+    "sourceSha256": "8998e4dc2a13384e80cb97a759b23ee9fa4846bf97491f08507b87eed24b10a4",
+    "method": "source-derived-40px-24color"
+  },
+  "market-tetraplopia-doubler": {
+    "src": "images/pixel/market-tetraplopia-doubler.png",
+    "source": "images/market/market-tetraplopia-doubler.webp",
+    "sourceSha256": "2146a83da75d03b625b271a537d2f89379f7972b062599e11d40c4008d5db447",
+    "method": "source-derived-40px-24color"
+  },
+  "market-cosmic-milk-chorus": {
+    "src": "images/pixel/market-cosmic-milk-chorus.png",
+    "source": "images/market/market-cosmic-milk-chorus.webp",
+    "sourceSha256": "e1056816c697ad3c8742c8829a22005ff9b950aa352d20532e2077244714b439",
+    "method": "source-derived-40px-24color"
+  },
+  "market-amp-squeezer-overdrive": {
+    "src": "images/pixel/market-amp-squeezer-overdrive.png",
+    "source": "images/market/market-amp-squeezer-overdrive.webp",
+    "sourceSha256": "d32444b64bd5b02209546a75e5f7973b2cbe7c7c54db8f9828654cc61530e3f2",
+    "method": "source-derived-40px-24color"
+  },
+  "market-bassement-plague-distortion": {
+    "src": "images/pixel/market-bassement-plague-distortion.png",
+    "source": "images/market/market-bassement-plague-distortion.webp",
+    "sourceSha256": "c942b8ed15e2ccee4247ad1a39ca32c479dc5ac8b1f0ea0a30b5cfadd78982d4",
+    "method": "source-derived-40px-24color"
+  },
+  "market-bassknob-std": {
+    "src": "images/pixel/market-bassknob-std.png",
+    "source": "images/market/market-bassknob-std.webp",
+    "sourceSha256": "de6e5166051f4e1f337c1467a8855fbec8e970aa43c485f81c67bd7a1d580c59",
+    "method": "source-derived-40px-24color"
+  },
+  "market-fair-post-grunge": {
+    "src": "images/pixel/market-fair-post-grunge.png",
+    "source": "images/market/market-fair-post-grunge.webp",
+    "sourceSha256": "1c19b0bae3360fad03084b914ed0f84d75b19552a79fa6938e37fc046dac9238",
+    "method": "source-derived-40px-24color"
+  },
+  "market-ampknob-revc": {
+    "src": "images/pixel/market-ampknob-revc.png",
+    "source": "images/market/market-ampknob-revc.webp",
+    "sourceSha256": "f50c2d788ab458d50c9ff0d556e007733bf42a36d66d441a8dc485704da5b6c8",
+    "method": "source-derived-40px-24color"
+  },
+  "market-hardball": {
+    "src": "images/pixel/market-hardball.png",
+    "source": "images/market/market-hardball.webp",
+    "sourceSha256": "34d4462b9ca26a11057f03b91875618d1de754ba462899460a1a32f263a86203",
+    "method": "source-derived-40px-24color"
+  },
+  "market-black": {
+    "src": "images/pixel/market-black.png",
+    "source": "images/market/market-black.webp",
+    "sourceSha256": "c8278da6b2a176b7c3690a05d90312823baa59ae3bf283cbf6ee4de635f6eb4c",
+    "method": "source-derived-40px-24color"
+  },
+  "market-clon-minotaur": {
+    "src": "images/pixel/market-clon-minotaur.png",
+    "source": "images/market/market-clon-minotaur.webp",
+    "sourceSha256": "fe700fab11ffa08a15207b5e592025b2abb2048fc359ad22222325ac43906fc2",
+    "method": "source-derived-40px-24color"
+  },
+  "market-crunck-v2": {
+    "src": "images/pixel/market-crunck-v2.png",
+    "source": "images/market/market-crunck-v2.webp",
+    "sourceSha256": "2328785a4a0077a18351c5f7d1dd5a4cab68ef84a69007051acfec239aecf3da",
+    "method": "source-derived-40px-24color"
+  },
+  "market-808-overdrive-pro": {
+    "src": "images/pixel/market-808-overdrive-pro.png",
+    "source": "images/market/market-808-overdrive-pro.webp",
+    "sourceSha256": "283c17668dbfbf81c77b2c676f9c0464f0166c1712ff7f1807a6f09629508f35",
+    "method": "source-derived-40px-24color"
+  },
+  "market-nine-gates-diabolic-distortion": {
+    "src": "images/pixel/market-nine-gates-diabolic-distortion.png",
+    "source": "images/market/market-nine-gates-diabolic-distortion.webp",
+    "sourceSha256": "4f66214666de3ed351f016686663ffe96034c4b44eb44517f1b712b78d35f151",
+    "method": "source-derived-40px-24color"
+  },
+  "market-psa1000-analog-saturation-unit": {
+    "src": "images/pixel/market-psa1000-analog-saturation-unit.png",
+    "source": "images/market/market-psa1000-analog-saturation-unit.webp",
+    "sourceSha256": "95d360dd00ccb377365a18e1f21f58ef1a1ef3af532242c1215c9806ab5a3301",
+    "method": "source-derived-40px-24color"
+  },
+  "market-501-chorus-echo": {
+    "src": "images/pixel/market-501-chorus-echo.png",
+    "source": "images/market/market-501-chorus-echo.webp",
+    "sourceSha256": "312b58d29a1e45a2a1543b47f375b3da8553869689771c7009d73fe28bab1bc8",
+    "method": "source-derived-40px-24color"
+  },
+  "market-pirkko-chorus-deluxe": {
+    "src": "images/pixel/market-pirkko-chorus-deluxe.png",
+    "source": "images/market/market-pirkko-chorus-deluxe.webp",
+    "sourceSha256": "75caa0088cf3a9e76955f2a8e983f76b344c4e5c67c96b7c93c6fe488cc7de1c",
+    "method": "source-derived-40px-24color"
+  },
+  "market-smultron-iii-envelope-filter": {
+    "src": "images/pixel/market-smultron-iii-envelope-filter.png",
+    "source": "images/market/market-smultron-iii-envelope-filter.webp",
+    "sourceSha256": "75f687902d7b7b53ba6022da7c5fd16f792b6ff5c959c7494794b856f99e2109",
+    "method": "source-derived-40px-24color"
+  },
+  "market-bass-driver": {
+    "src": "images/pixel/market-bass-driver.png",
+    "source": "images/market/market-bass-driver.webp",
+    "sourceSha256": "21f62a5935af044a25ef60151cffe581b3b509a997fa669e4bdac39b0ad7b971",
+    "method": "source-derived-40px-24color"
+  },
+  "market-bass-hammer": {
+    "src": "images/pixel/market-bass-hammer.png",
+    "source": "images/market/market-bass-hammer.webp",
+    "sourceSha256": "1c5df5cf9450bdec8bb83c0e994f095b9f6bcdf07cf3596f1695f979b95c78d8",
+    "method": "source-derived-40px-24color"
+  },
+  "market-auto-drummer": {
+    "src": "images/pixel/market-auto-drummer.png",
+    "source": "images/market/market-auto-drummer.webp",
+    "sourceSha256": "08190955709dfbf462d2c97b732ce249fd0a7d377315c1ef6273ebb1abff3ac8",
+    "method": "source-derived-40px-24color"
+  },
+  "market-quadbass": {
+    "src": "images/pixel/market-quadbass.png",
+    "source": "images/market/market-quadbass.webp",
+    "sourceSha256": "4c9e59c83c7600977e9c2844aabd45879904478bd11f5347d5977dde64cd660c",
+    "method": "source-derived-40px-24color"
+  },
+  "market-fair-modern-metal": {
+    "src": "images/pixel/market-fair-modern-metal.png",
+    "source": "images/market/market-fair-modern-metal.webp",
+    "sourceSha256": "faecbd4238b6c76ff06c08776edbb36538b72ae4f801b4fc2bcaf436413e6f4b",
+    "method": "source-derived-40px-24color"
+  },
+  "market-studio-pre": {
+    "src": "images/pixel/market-studio-pre.png",
+    "source": "images/market/market-studio-pre.webp",
+    "sourceSha256": "e74b6bb4b15bd36a26b72b492f7957c73e9dacd83599179f5e005216f98b2102",
+    "method": "source-derived-40px-24color"
+  },
+  "market-punk-sans": {
+    "src": "images/pixel/market-punk-sans.png",
+    "source": "images/market/market-punk-sans.webp",
+    "sourceSha256": "f0738b0d033b9d6b4be961a25d56e8654de20a0e44f1351c2c02b8f4edf48f84",
+    "method": "source-derived-40px-24color"
+  },
+  "market-shedspace": {
+    "src": "images/pixel/market-shedspace.png",
+    "source": "images/market/market-shedspace.webp",
+    "sourceSha256": "eb684688ab410882072156fc9ca29d9dfce39be5c8e69873a639ebbab4b02f6e",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dualcomp": {
+    "src": "images/pixel/market-dualcomp.png",
+    "source": "images/market/market-dualcomp.webp",
+    "sourceSha256": "c0764146ce4812a99cef4261b2e4e4f4518e959a2acdc4b5febc1f32af87c304",
+    "method": "source-derived-40px-24color"
+  },
+  "market-dualgate": {
+    "src": "images/pixel/market-dualgate.png",
+    "source": "images/market/market-dualgate.webp",
+    "sourceSha256": "37b67946e55ddfa5c8f441f13e63f98c4ae2e96e7189aeeab65507fdeab85c16",
+    "method": "source-derived-40px-24color"
+  },
+  "market-cognate-bitcrush": {
+    "src": "images/pixel/market-cognate-bitcrush.png",
+    "source": "images/market/market-cognate-bitcrush.webp",
+    "sourceSha256": "2731e696dc69ba6b1e1c10270c7c3b766e32133042d0174db53b76f41d30e4e6",
+    "method": "source-derived-40px-24color"
+  },
+  "market-cognate-chord": {
+    "src": "images/pixel/market-cognate-chord.png",
+    "source": "images/market/market-cognate-chord.webp",
+    "sourceSha256": "179008c278ea4c5b6b56cb0b31870a44c038b776520c69e9128f939e9ba127be",
+    "method": "source-derived-40px-24color"
+  },
+  "market-cognate-hologram": {
+    "src": "images/pixel/market-cognate-hologram.png",
+    "source": "images/market/market-cognate-hologram.webp",
+    "sourceSha256": "1a37201cbcfd12f72323fb7ce3668451e03b1a2d83d3bf7968abacb8c58838a8",
+    "method": "source-derived-40px-24color"
+  },
+  "market-cognate-kinetic": {
+    "src": "images/pixel/market-cognate-kinetic.png",
+    "source": "images/market/market-cognate-kinetic.webp",
+    "sourceSha256": "1929bc0514997b9c9a3623cc0431f66a6e28974cf70d245eafc4816c5927fdde",
+    "method": "source-derived-40px-24color"
+  },
+  "market-cognate-pultrick": {
+    "src": "images/pixel/market-cognate-pultrick.png",
+    "source": "images/market/market-cognate-pultrick.webp",
+    "sourceSha256": "20268872dfd7f797f0f9ee10d004c87de450392e99a13f63df969ed95e062fe2",
+    "method": "source-derived-40px-24color"
+  },
+  "market-cognate-metro": {
+    "src": "images/pixel/market-cognate-metro.png",
+    "source": "images/market/market-cognate-metro.webp",
+    "sourceSha256": "ed22a70f9df5b842880e7b93124b1a9e0831e8ae22277e110c0765a51df0f222",
+    "method": "source-derived-40px-24color"
+  },
+  "market-cognate-ringmod": {
+    "src": "images/pixel/market-cognate-ringmod.png",
+    "source": "images/market/market-cognate-ringmod.webp",
+    "sourceSha256": "5a9384004e906a4f571f34d13cf800fe4109d3cd20feec06c52f6e8efd2b3d0d",
+    "method": "source-derived-40px-24color"
+  },
+  "market-auto-wah": {
+    "src": "images/pixel/market-auto-wah.png",
+    "source": "images/market/market-auto-wah.webp",
+    "sourceSha256": "f166214d5b3d338529e88f6637a33a27600b925a5ac209da049b93b8fd73b493",
+    "method": "source-derived-40px-24color"
+  },
+  "market-auto-swell": {
+    "src": "images/pixel/market-auto-swell.png",
+    "source": "images/market/market-auto-swell.webp",
+    "sourceSha256": "cccb2b6ce4fcf207e55ddc663132d02ec8cf23a75c9068e3b5729a04f1d283f6",
+    "method": "source-derived-40px-24color"
+  },
+  "market-beer-belly-enhancer": {
+    "src": "images/pixel/market-beer-belly-enhancer.png",
+    "source": "images/market/market-beer-belly-enhancer.webp",
+    "sourceSha256": "afd2b7f276e75e8e20b16e2469c8c47552565b371b6337b78e2d7ca9923a56a1",
+    "method": "source-derived-40px-24color"
+  },
+  "market-bass-resonance": {
+    "src": "images/pixel/market-bass-resonance.png",
+    "source": "images/market/market-bass-resonance.webp",
+    "sourceSha256": "044d83aac697fb73cd43dfb88e49a2293a1387e0b1470bcdc5348368f2cb9d5f",
+    "method": "source-derived-40px-24color"
+  },
+  "market-cognate-polymath": {
+    "src": "images/pixel/market-cognate-polymath.png",
+    "source": "images/market/market-cognate-polymath.webp",
+    "sourceSha256": "aa01fd1cc90bf36e5545ae6ce008d1c79bacfa26633ce5ae78c3207bcbc8b856",
+    "method": "source-derived-40px-24color"
+  },
+  "market-cognate-aperture": {
+    "src": "images/pixel/market-cognate-aperture.png",
+    "source": "images/market/market-cognate-aperture.webp",
+    "sourceSha256": "9517f8df89d312e227f55a4be0ef9688d335bebacbc4405d43c8face4086dd81",
+    "method": "source-derived-40px-24color"
+  },
+  "market-subglow": {
+    "src": "images/pixel/market-subglow.png",
+    "source": "images/market/market-subglow.webp",
+    "sourceSha256": "1bd326364804aeed58e7759eaac3630c527a50c31b898fabdc361b17c5467ebd",
+    "method": "source-derived-40px-24color"
+  },
+  "market-u-u-wah": {
+    "src": "images/pixel/market-u-u-wah.png",
+    "source": "images/market/market-u-u-wah.webp",
+    "sourceSha256": "a60923b69ed9aec21bfae6a07a9f68eb4204f8edcfd94f591c5fe862b30f96fd",
+    "method": "source-derived-40px-24color"
+  },
+  "market-box-of-bass": {
+    "src": "images/pixel/market-box-of-bass.png",
+    "source": "images/market/market-box-of-bass.webp",
+    "sourceSha256": "e5a654928bb61f8ce9c4c1bac5d478a7b0955e3a9fc6c4f137f61bb17ea3e431",
+    "method": "source-derived-40px-24color"
+  },
+  "market-wool": {
+    "src": "images/pixel/market-wool.png",
+    "source": "images/market/market-wool.webp",
+    "sourceSha256": "a888c5d2547feab3266ca2bd93c4591da94b4259c039794fc8306c49c3ecc306",
+    "method": "source-derived-40px-24color"
+  },
+  "market-4k-e": {
+    "src": "images/pixel/market-4k-e.png",
+    "source": "images/market/market-4k-e.webp",
+    "sourceSha256": "161508801bbc70071c47a93861b702f9d0ec3731332d6ee041c0426a8dddb3f4",
+    "method": "source-derived-40px-24color"
+  },
+  "market-sonic-enhancer": {
+    "src": "images/pixel/market-sonic-enhancer.png",
+    "source": "images/market/market-sonic-enhancer.webp",
+    "sourceSha256": "46e569293fa42c08ae211285e06b9bcdbaafe942565aee2b6397488b6c6cb94e",
+    "method": "source-derived-40px-24color"
+  },
+  "market-mammoth": {
+    "src": "images/pixel/market-mammoth.png",
+    "source": "images/market/market-mammoth.webp",
+    "sourceSha256": "08c03a6f8cacf61dd1c771013c82dad79aebefcbae348c6b4e9190147717a3b3",
+    "method": "source-derived-40px-24color"
+  },
+  "market-big-red-mute-button": {
+    "src": "images/pixel/market-big-red-mute-button.png",
+    "source": "images/market/market-big-red-mute-button.webp",
+    "sourceSha256": "40f368c274385a8ec652e90d96bd883610c2b641ff6a95bc9a6dfb2f5cf766a3",
+    "method": "source-derived-40px-24color"
+  },
+  "market-analog-rack-delay": {
+    "src": "images/pixel/market-analog-rack-delay.png",
+    "source": "images/market/market-analog-rack-delay.webp",
+    "sourceSha256": "f192d69aede6fb51227301a80e1b4cd9c0645695fca9d1b2c84f817b014dfc63",
+    "method": "source-derived-40px-24color"
+  },
+  "market-groove": {
+    "src": "images/pixel/market-groove.png",
+    "source": "images/market/market-groove.webp",
+    "sourceSha256": "e6d135ee33009bbd9c4e0b97b28588a24b7bbb5aabc42c5426df42da56e588b2",
+    "method": "source-derived-40px-24color"
+  },
+  "market-bass-3500": {
+    "src": "images/pixel/market-bass-3500.png",
+    "source": "images/market/market-bass-3500.webp",
+    "sourceSha256": "8a12fbb8ee5e21d1f06b6786f8202127f84fa02b78a46383ccfada8fc646992c",
+    "method": "source-derived-40px-24color"
+  },
+  "market-modern-tube": {
+    "src": "images/pixel/market-modern-tube.png",
+    "source": "images/market/market-modern-tube.webp",
+    "sourceSha256": "7754b9ba1765a0e5e233f23abcf903ea1e873e5a967159830cbc25053c65e4ef",
+    "method": "source-derived-40px-24color"
+  },
+  "market-delay3000": {
+    "src": "images/pixel/market-delay3000.png",
+    "source": "images/market/market-delay3000.webp",
+    "sourceSha256": "d14e3511abd18c65f53b29ba870e4e055e3b16232105cdaa9d150a2fb9a781b3",
+    "method": "source-derived-40px-24color"
+  },
+  "market-doubler": {
+    "src": "images/pixel/market-doubler.png",
+    "source": "images/market/market-doubler.webp",
+    "sourceSha256": "196e5e166004a9228ec48f5f3d517f8017d77523e7d22e9237364e11a5a62917",
+    "method": "source-derived-40px-24color"
+  },
+  "market-crusher": {
+    "src": "images/pixel/market-crusher.png",
+    "source": "images/market/market-crusher.webp",
+    "sourceSha256": "8b6ce1a3350fb4a934369e6c1bf4f7c952e0df21cb8bcefe8d6de5a1825637d7",
+    "method": "source-derived-40px-24color"
+  },
+  "market-octa": {
+    "src": "images/pixel/market-octa.png",
+    "source": "images/market/market-octa.webp",
+    "sourceSha256": "9c37ab34f1560001496f256bfedefede22654052724eae64750acad59386a4d4",
+    "method": "source-derived-40px-24color"
+  },
+  "market-polyshim": {
+    "src": "images/pixel/market-polyshim.png",
+    "source": "images/market/market-polyshim.webp",
+    "sourceSha256": "6de9f3637682a1860029c92c3216a7f8de7a9ec24c7d3fd678ecc8eb6f4331dc",
+    "method": "source-derived-40px-24color"
+  },
+  "market-biotremology-tremolo": {
+    "src": "images/pixel/market-biotremology-tremolo.png",
+    "source": "images/market/market-biotremology-tremolo.webp",
+    "sourceSha256": "d3501594da532b4bdc13c3672bfb89aa0533f48a473e1c2619a922b2d265dc63",
+    "method": "source-derived-40px-24color"
+  },
+  "market-picking-fingers": {
+    "src": "images/pixel/market-picking-fingers.png",
+    "source": "images/market/market-picking-fingers.webp",
+    "sourceSha256": "334693bcd281b15f4b4b2cc2ce01c45c1d5bbe329cb11a5347beb949277c3cab",
+    "method": "source-derived-40px-24color"
+  },
+  "market-arcadia-u7": {
+    "src": "images/pixel/market-arcadia-u7.png",
+    "source": "images/market/market-arcadia-u7.webp",
+    "sourceSha256": "78be5d181452b0812d65475ff40b86c2c474c2b46bb71e1a35d80c45b9ae8338",
+    "method": "source-derived-40px-24color"
+  },
+  "market-buffalo-one": {
+    "src": "images/pixel/market-buffalo-one.png",
+    "source": "images/market/market-buffalo-one.webp",
+    "sourceSha256": "c22cff898b760e27ec192b615a48222c920109b3e2a8fe14ebace1123ab16f39",
+    "method": "source-derived-40px-24color"
+  },
+  "market-tape-delay": {
+    "src": "images/pixel/market-tape-delay.png",
+    "source": "images/market/market-tape-delay.webp",
+    "sourceSha256": "983274f9beabe31d132e4b710ab225eceec7683a1a045e6f353f0d4f167825f5",
+    "method": "source-derived-40px-24color"
+  },
+  "market-reverse-delay": {
+    "src": "images/pixel/market-reverse-delay.png",
+    "source": "images/market/market-reverse-delay.webp",
+    "sourceSha256": "1a63b1caf6a397121e60e20f1956c10ddb3af78ca5897841670c3f4138d9bfcd",
+    "method": "source-derived-40px-24color"
+  },
+  "market-ping-pong-delay": {
+    "src": "images/pixel/market-ping-pong-delay.png",
+    "source": "images/market/market-ping-pong-delay.webp",
+    "sourceSha256": "717f386ffa150af30ee635db5786d29abc190a330b9cfc6afddbe9db37cb274f",
+    "method": "source-derived-40px-24color"
+  },
+  "market-ping-pong-reverse-delay": {
+    "src": "images/pixel/market-ping-pong-reverse-delay.png",
+    "source": "images/market/market-ping-pong-reverse-delay.webp",
+    "sourceSha256": "2b68d122f2af60fccd5e29e71d4ecd3666315e27d47ca8a46a30bc47d8176d28",
+    "method": "source-derived-40px-24color"
+  },
+  "market-acoustic-voice-pro": {
+    "src": "images/pixel/market-acoustic-voice-pro.png",
+    "source": "images/market/market-acoustic-voice-pro.webp",
+    "sourceSha256": "14b7571b76a5efce213d2e5753a0dbc35bd3b6e0108c79b7ad80a7c2f43a3780",
+    "method": "source-derived-40px-24color"
+  },
+  "market-voice-dc30": {
+    "src": "images/pixel/market-voice-dc30.png",
+    "source": "images/market/market-voice-dc30.webp",
+    "sourceSha256": "1d3a3add5af3574225a7dc6049a04d05c224626a236378c8c92a9a7e9b900fa6",
+    "method": "source-derived-40px-24color"
+  },
+  "market-mp1-pro": {
+    "src": "images/pixel/market-mp1-pro.png",
+    "source": "images/market/market-mp1-pro.webp",
+    "sourceSha256": "c85fad4d3503028affc4a6dfe7ba1ef0352f00f367918aee6b749f7b5d5fdb69",
+    "method": "source-derived-40px-24color"
+  },
+  "market-bass-cab-ultimate": {
+    "src": "images/pixel/market-bass-cab-ultimate.png",
+    "source": "images/market/market-bass-cab-ultimate.webp",
+    "sourceSha256": "502b91c68ba6775f8f1ba5f9ca979502c9131c86ee2901221d43670dd06aeaf3",
+    "method": "source-derived-40px-24color"
+  },
+  "market-sp-custom-preamp": {
+    "src": "images/pixel/market-sp-custom-preamp.png",
+    "source": "images/market/market-sp-custom-preamp.webp",
+    "sourceSha256": "5deef6f574657a5c81fb9055cf983e6c9bc16a6c859811682981e6fb9788c79e",
+    "method": "source-derived-40px-24color"
+  },
+  "special-leonardo-deluxe": {
+    "src": "images/pixel/special-leonardo-deluxe.png",
+    "source": "images/factory/special-leonardo-deluxe.webp",
+    "sourceSha256": "e57826695f5f033639a3e237d25292be10b793b61c1a1057e9fc57ae815b5bcb",
+    "method": "source-derived-40px-24color"
+  },
+  "special-leonardo-twin": {
+    "src": "images/pixel/special-leonardo-twin.png",
+    "source": "images/factory/special-leonardo-twin.webp",
+    "sourceSha256": "cba6ee636aece4040716051461859fba874302bb1ff42d5b4c327e0741c0f70c",
+    "method": "source-derived-40px-24color"
+  },
+  "special-admiral-supreme-drive": {
+    "src": "images/pixel/special-admiral-supreme-drive.png",
+    "source": "images/factory/special-admiral-supreme-drive.webp",
+    "sourceSha256": "1e81c4b3953c9a7528d6c97a5cc847ec4980946f5ec3ab82d8c06f3cc55e32e1",
+    "method": "source-derived-40px-24color"
+  },
+  "special-admiral-jjm800": {
+    "src": "images/pixel/special-admiral-jjm800.png",
+    "source": "images/factory/special-admiral-jjm800.webp",
+    "sourceSha256": "121f388d240ae37420912de8c5cc76f466585a4852d623b89f5bef2197bdc109",
+    "method": "source-derived-40px-24color"
+  },
+  "special-hiwoltt-103": {
+    "src": "images/pixel/special-hiwoltt-103.png",
+    "source": "images/factory/special-hiwoltt-103.webp",
+    "sourceSha256": "6d04facfef319693a45564e4caa6566623b626b4e9a7c0210f01e7f60c00c367",
+    "method": "source-derived-40px-24color"
+  },
+  "special-patchless-c-iii-emerald": {
+    "src": "images/pixel/special-patchless-c-iii-emerald.png",
+    "source": "images/factory/special-patchless-c-iii-emerald.webp",
+    "sourceSha256": "fb299e3e68c671588d42a4bbe659ee16a7e168356fe41f298e0460498e8c72bc",
+    "method": "source-derived-40px-24color"
+  },
+  "special-patchless-c-iii-crimson": {
+    "src": "images/pixel/special-patchless-c-iii-crimson.png",
+    "source": "images/factory/special-patchless-c-iii-crimson.webp",
+    "sourceSha256": "9ed2dd5610234e44653b0594a5b0e8a70fda578f623ac2cb8c99e593ac94433f",
+    "method": "source-derived-40px-24color"
+  },
+  "special-victory-deputy": {
+    "src": "images/pixel/special-victory-deputy.png",
+    "source": "images/factory/special-victory-deputy.webp",
+    "sourceSha256": "402b19bc8d22a6dd101686ead3a7e8504dc310b1f6184080dbe388d021ff3a6b",
+    "method": "source-derived-40px-24color"
+  },
+  "special-phoebe-siso": {
+    "src": "images/pixel/special-phoebe-siso.png",
+    "source": "images/factory/special-phoebe-siso.webp",
+    "sourceSha256": "9b2644a5cccbbf2f710bec7269f11967ee277f3fd5b2a1edc3b9e0ab088df9e6",
+    "method": "source-derived-40px-24color"
+  },
+  "special-magner-delicacy-blue": {
+    "src": "images/pixel/special-magner-delicacy-blue.png",
+    "source": "images/factory/special-magner-delicacy-blue.webp",
+    "sourceSha256": "b1d11bba5aadb63bca7f3d9357b3fd12ccbc1a2cec038ac70fb0f3f759e7c4a5",
+    "method": "source-derived-40px-24color"
+  },
+  "special-magner-delicacy-red": {
+    "src": "images/pixel/special-magner-delicacy-red.png",
+    "source": "images/factory/special-magner-delicacy-red.webp",
+    "sourceSha256": "a83301262166c35706dce7bb358510af3345b0295b819167a50d604bb607b340",
+    "method": "source-derived-40px-24color"
+  },
+  "special-infante-triode-current": {
+    "src": "images/pixel/special-infante-triode-current.png",
+    "source": "images/factory/special-infante-triode-current.webp",
+    "sourceSha256": "7d3df05c26442dfe32d2b61fa57b88628c0a9c0ec91d122f3cc6593e1cb5efb0",
+    "method": "source-derived-40px-24color"
+  },
+  "special-kentauri": {
+    "src": "images/pixel/special-kentauri.png",
+    "source": "images/factory/special-kentauri.webp",
+    "sourceSha256": "d6ed9d9edc8c1cae3bc5fb54df8387ac6f1ddb572032b63d9521c8ea00024570",
+    "method": "source-derived-40px-24color"
+  },
+  "special-indigo-carrier": {
+    "src": "images/pixel/special-indigo-carrier.png",
+    "source": "images/factory/special-indigo-carrier.webp",
+    "sourceSha256": "effb7565c932deab7ceacf80a52bc9b7953cd4df65b6cf16477ac27c825a0421",
+    "method": "source-derived-40px-24color"
+  },
+  "special-valve-crier-808": {
+    "src": "images/pixel/special-valve-crier-808.png",
+    "source": "images/factory/special-valve-crier-808.webp",
+    "sourceSha256": "d9e998fea6f4e6723a878c495e387d58f933ba79f5a4b8448d1117ef721aa881",
+    "method": "source-derived-40px-24color"
+  }
+}

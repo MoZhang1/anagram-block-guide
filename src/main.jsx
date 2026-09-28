@@ -1,27 +1,20 @@
-import React, { useState, useMemo, useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   Search,
-  SlidersHorizontal,
-  AudioLines,
-  Speaker,
-  Boxes,
-  Sliders,
-  Radio,
-  Waves,
-  Clock3,
-  Plug,
-  ArrowLeft,
-  ArrowUpRight,
-  Link,
-  Check,
   X,
   ChevronRight,
   ChevronLeft,
-  ZoomIn,
-  Info,
+  ChevronUp,
+  ChevronDown,
+  Heart,
+  Share2,
+  Check,
+  SlidersHorizontal,
+  ArrowLeft,
 } from "lucide-react";
 import data from "./data/catalog.json";
+import pixels from "./data/pixel-manifest.json";
 import {
   categories,
   origins,
@@ -29,692 +22,571 @@ import {
   filterBlocks,
   readRoute,
   writeRoute,
-  number,
 } from "./catalog.mjs";
+import {
+  dexNumbers,
+  dexDescription,
+  adjacentBlock,
+  readFavorites,
+  storeFavorites,
+} from "./dex.mjs";
+import { PanelGuide, Modal, SourceLink } from "./PanelGuide.jsx";
 import "./styles.css";
+
+const assetUrl = (path) => import.meta.env.BASE_URL + path;
+const initial = readRoute(location.hash);
+const resetFilters = {
+  query: "",
+  category: "全部单块",
+  origin: "全部来源",
+  cost: "全部",
+  coverage: "全部资料",
+};
 const REPO = "https://github.com/MoZhang1/anagram-block-guide";
-const icons = [
-  Boxes,
-  Speaker,
-  Speaker,
-  AudioLines,
-  Sliders,
-  Radio,
-  Waves,
-  Plug,
-];
-const imgUrl = (src) =>
-  /^https?:/.test(src) ? src : import.meta.env.BASE_URL + src;
-function SourceLink({ url, children }) {
+
+function Directory({
+  state,
+  update,
+  blocks,
+  selected,
+  choose,
+  searchRef,
+  favorites,
+  onlyFavorites,
+  setOnlyFavorites,
+}) {
+  const [advanced, setAdvanced] = useState(false);
+  const listRef = useRef(null);
+  useEffect(() => {
+    listRef.current
+      ?.querySelector('[aria-pressed="true"]')
+      ?.scrollIntoView({ block: "nearest" });
+  }, [selected?.id]);
+  const clear = () => {
+    update(resetFilters);
+    setOnlyFavorites(false);
+  };
   return (
-    <a href={url} target="_blank" rel="noreferrer">
-      {children}
-      <ArrowUpRight size={13} />
-    </a>
-  );
-}
-function Filters({ state, change, blocks, mobileOpen }) {
-  return (
-    <aside
-      className={"filters " + (mobileOpen ? "is-open" : "")}
-      aria-label="单块筛选"
-    >
-      <h2>单块分类</h2>
-      <nav>
-        {categories.map((c, i) => {
-          const Icon = icons[i];
-          return (
-            <button
-              key={c}
-              className={state.category === c ? "category active" : "category"}
-              onClick={() => change({ category: c })}
-              aria-pressed={state.category === c}
-            >
-              <Icon size={18} />
-              <span>{c}</span>
-              <small>
-                {c === "全部单块"
-                  ? blocks.length
-                  : blocks.filter((b) => b.category === c).length}
-              </small>
-            </button>
-          );
-        })}
-      </nav>
-      <div className="filter-group">
-        <h2>来源筛选</h2>
-        {origins.map((o) => (
-          <label key={o} className="radio">
-            <input
-              type="radio"
-              name="origin"
-              checked={state.origin === o}
-              onChange={() => change({ origin: o })}
-            />
-            <span>{o}</span>
-            <small>
-              {o === "全部来源"
-                ? blocks.length
-                : blocks.filter((b) => b.origin === o).length}
-            </small>
-          </label>
-        ))}
+    <div className="lcd directory-screen">
+      <div className="search-box">
+        <Search size={30} strokeWidth={3} aria-hidden="true" />
+        <input
+          ref={searchRef}
+          type="search"
+          value={state.query}
+          onChange={(e) => update({ query: e.target.value })}
+          placeholder="搜索单块名称"
+          aria-label="搜索单块名称、旋钮或音色"
+        />
+        {state.query && (
+          <button onClick={() => update({ query: "" })} aria-label="清空搜索">
+            <X size={24} />
+          </button>
+        )}
       </div>
-      <div className="filter-group">
-        <label className="field-label" htmlFor="cost">
-          获取方式
-        </label>
+      <div className="primary-filters">
         <select
-          id="cost"
-          value={state.cost}
-          onChange={(e) => change({ cost: e.target.value })}
+          aria-label="属性筛选"
+          value={state.category}
+          onChange={(e) => update({ category: e.target.value })}
         >
-          {costs.map((x) => (
-            <option key={x}>{x}</option>
+          {categories.map((x) => (
+            <option key={x} value={x}>
+              {x === "全部单块" ? "全部属性" : x}
+            </option>
           ))}
         </select>
-        <label className="field-label" htmlFor="coverage">
-          资料完整度
-        </label>
         <select
-          id="coverage"
-          value={state.coverage}
-          onChange={(e) => change({ coverage: e.target.value })}
+          aria-label="来源筛选"
+          value={state.origin}
+          onChange={(e) => update({ origin: e.target.value })}
         >
-          {["全部资料", "有面板说明", "可图文定位", "面板待核实"].map((x) => (
+          {origins.map((x) => (
             <option key={x}>{x}</option>
           ))}
         </select>
       </div>
-      <p className="rail-note">
-        非官方中文参考
-        <br />
-        清单 {data.updated}
-        <br />
-        说明修订 {data.contentUpdated || data.updated}
-        <br />
-        KosmOS {data.firmware}
-      </p>
-    </aside>
-  );
-}
-function BlockList({ blocks, selected, onSelect, reset }) {
-  return (
-    <section className="results" aria-label="单块列表">
-      <div className="list-heading">
-        <h2>
-          单块列表 <span>({blocks.length})</span>
-        </h2>
-        <span>按目录顺序</span>
-      </div>
-      <div className="list-scroll">
+      <div className="directory-list" ref={listRef} aria-label="单块列表">
         {blocks.length ? (
           blocks.map((b) => (
             <button
               key={b.id}
-              className={"block-row " + (selected === b.id ? "selected" : "")}
-              onClick={() => onSelect(b.id)}
-              aria-pressed={selected === b.id}
+              onClick={() => choose(b.id)}
+              className={"dex-row" + (b.id === selected?.id ? " selected" : "")}
+              aria-pressed={b.id === selected?.id}
             >
-              <img src={imgUrl(b.images[0].src)} alt="" loading="lazy" />
-              <div>
-                <strong>{b.name}</strong>
-                <p>{b.vendor}</p>
-                <small>
-                  {b.category} ·{" "}
-                  {b.origin === "原厂"
-                    ? "原厂"
-                    : b.cost === "免费"
-                      ? "免费扩展"
-                      : b.origin === "Guitar Essentials"
-                        ? "特别版"
-                        : "付费扩展"}
-                </small>
-              </div>
-              <ChevronRight className="row-arrow" size={17} />
+              <img
+                className="pixel-sprite"
+                src={assetUrl(pixels[b.id].src)}
+                width="56"
+                height="56"
+                alt=""
+                loading="lazy"
+              />
+              <span className="dex-number">{dexNumbers.get(b.id)}</span>
+              <span className="dex-name">{b.name}</span>
+              {favorites.includes(b.id) ? (
+                <Heart size={17} fill="currentColor" aria-label="已收藏" />
+              ) : (
+                <ChevronRight className="row-arrow" size={23} strokeWidth={3} />
+              )}
             </button>
           ))
         ) : (
           <div className="empty">
-            <Search size={28} />
-            <h3>没有找到匹配的单块</h3>
-            <p>
-              试试英文名、旋钮名或“压缩”“八度”“免费”。多个关键词用空格分开。
-            </p>
-            <button className="secondary" onClick={reset}>
-              清除全部筛选
+            <Search size={36} />
+            <h2>没有找到单块</h2>
+            <p>试试其他名称，或清除筛选。</p>
+            <button className="lcd-button" onClick={clear}>
+              清除筛选
             </button>
           </div>
         )}
       </div>
-    </section>
-  );
-}
-function ImageGallery({ block }) {
-  const [index, setIndex] = useState(0),
-    [zoom, setZoom] = useState(false);
-  const close = useRef(null),
-    trigger = useRef(null);
-  useEffect(() => {
-    setIndex(0);
-    setZoom(false);
-  }, [block.id]);
-  useEffect(() => {
-    if (!zoom) return;
-    close.current?.focus();
-    const fn = (e) => {
-      if (e.key === "Escape") {
-        setZoom(false);
-        trigger.current?.focus();
-      }
-      if (e.key === "Tab") {
-        e.preventDefault();
-        close.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", fn);
-    return () => document.removeEventListener("keydown", fn);
-  }, [zoom]);
-  const image = block.images[Math.min(index, block.images.length - 1)];
-  return (
-    <figure className="gallery">
-      <button
-        ref={trigger}
-        className="image-button"
-        onClick={() => setZoom(true)}
-        aria-label={"放大 " + block.name + " 图片"}
-      >
-        <img src={imgUrl(image.src)} alt={block.name + " — " + image.caption} />
-        <ZoomIn size={18} />
-      </button>
-      <figcaption>{image.caption}</figcaption>
-      {block.images.length > 1 && (
-        <div className="gallery-controls">
-          <button
-            aria-label="上一张图片"
-            onClick={() =>
-              setIndex((index + block.images.length - 1) % block.images.length)
-            }
-          >
-            <ChevronLeft size={15} />
-          </button>
-          <span>
-            {index + 1} / {block.images.length}
-          </span>
-          <button
-            aria-label="下一张图片"
-            onClick={() => setIndex((index + 1) % block.images.length)}
-          >
-            <ChevronRight size={15} />
-          </button>
-        </div>
-      )}
-      {zoom && (
-        <div
-          className="lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label={block.name + " 大图"}
-          onClick={() => {
-            setZoom(false);
-            trigger.current?.focus();
-          }}
+      <div className="directory-status">
+        <span aria-live="polite">
+          {blocks.length === data.blocks.length ? "收录" : "找到"}{" "}
+          {blocks.length} 个条目
+        </span>
+        <button
+          className={advanced ? "active" : ""}
+          onClick={() => setAdvanced(!advanced)}
+          aria-expanded={advanced}
+          aria-label="更多筛选"
+          title="更多筛选"
         >
-          <button
-            ref={close}
-            className="close-zoom"
-            aria-label="关闭大图"
-            onClick={() => {
-              setZoom(false);
-              trigger.current?.focus();
-            }}
-          >
-            <X />
-          </button>
-          <img
-            src={imgUrl(image.src)}
-            alt={block.name + " 放大图片"}
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
-    </figure>
-  );
-}
-function PanelReference({ block, selected, onSelect, panelRef }) {
-  const images = block.images.map((image, index) => ({ ...image, index })).filter(image => image.panel);
-  if (!images.length) return null;
-  const image = images.find(i => i.index === selected?.imageIndex) || images.find(i => i.index > 0) || images[0];
-  const markers = block.controls.flatMap((c, controlIndex) => (c.panelRefs || [])
-    .filter(r => r.imageIndex === image.index).map(r => ({ ...r, controlIndex, name: c.name })));
-  return <section className="panel-reference" ref={panelRef} aria-label="面板对照">
-    <div className="section-heading"><h2>面板对照</h2><span>{image.index === 0 ? '单块外观 · 非完整参数页' : '官方商店截图'}</span></div>
-    <div className="panel-tabs" aria-label="选择参考图片">
-      {images.map(i => <button key={i.index} aria-pressed={image.index === i.index} onClick={() => onSelect({ imageIndex: i.index })}>
-        {i.index === 0 ? '外观标识' : `面板 ${i.index}`}
-      </button>)}
-    </div>
-    <div className={'panel-image ' + (image.index === 0 ? 'artwork' : '')}>
-      <img src={imgUrl(image.src)} alt={block.name + ' ' + (image.index === 0 ? '单块外观标识' : `官方操作面板 ${image.index}`)} />
-      {markers.map(m => <button key={m.controlIndex}
-        className={'panel-marker ' + (selected?.controlIndex === m.controlIndex ? 'selected' : '')}
-        style={{ left: `${m.box[0] * 100}%`, top: `${m.box[1] * 100}%`, width: `${m.box[2] * 100}%`, height: `${m.box[3] * 100}%` }}
-        aria-label={'查看 ' + m.name + ' 说明'} title={m.name}
-        onClick={() => { onSelect(m); requestAnimationFrame(() => document.getElementById(`control-${block.id}-${m.controlIndex}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })); }} />)}
-    </div>
-    <p className="panel-caption" aria-live="polite">
-      {selected?.label ? `${selected.name || ''} → 图中 ${selected.label}` : '点击图中文字可跳到参数；点击表内“图中位置”可反向定位。'}
-    </p>
-    <a className="panel-original" href={imgUrl(image.src)} target="_blank" rel="noreferrer">查看原图 ↗</a>
-    <p className="table-note">按图片中的英文标签匹配；截图可能来自旧版本，数值不是推荐设置。未匹配的参数不标位置。</p>
-  </section>;
-}
-function ParameterTable({ block }) {
-  const [query, setQuery] = useState("");
-  const [selectedPanel, setSelectedPanel] = useState(null);
-  const panelRef = useRef(null);
-  const controls = block.controls.map((c, index) => ({ ...c, index })).filter((c) =>
-    (c.name + " " + c.description + " " + (c.adjustment || "") + " " + (c.group || ""))
-      .toLowerCase()
-      .includes(query.toLowerCase()),
-  );
-  return (
-    <section className="parameters">
-      <PanelReference block={block} selected={selectedPanel} onSelect={(m) => { setQuery(''); setSelectedPanel(m); }} panelRef={panelRef} />
-      <div className="section-heading">
-        <h2>参数说明</h2>
-        <span>{block.controls.length} 项说明</span>
+          <SlidersHorizontal size={22} />
+        </button>
       </div>
-      {block.controls.length > 12 && (
-        <input
-          className="parameter-search"
-          aria-label="搜索本单块参数"
-          placeholder="搜索参数名称、功能…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      )}
-      <p className="table-note">
-        保留面板英文名称。“调节与听感”为使用参考，不是厂商预设。
-        {block.origin === "Marketplace"
-          ? "范围、默认值及选项来自官方参数元数据。"
-          : "未确认的数值不填写；社区记录可能与当前固件有差异。"}
-      </p>
-      {block.controls.length > 0 ? (
-        <div className="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>参数</th>
-                <th>功能与调节</th>
-              </tr>
-            </thead>
-            <tbody>
-              {controls.map((c, i) => (
-                <tr key={c.name + i} id={`control-${block.id}-${c.index}`} className={selectedPanel?.controlIndex === c.index ? 'selected-control' : ''}>
-                  <th scope="row">
-                    {c.group && (
-                      <small className="param-group">{c.group}</small>
-                    )}
-                    <span>{c.name}</span>
-                    {(c.panelRefs?.length > 0) && <button className="panel-link" onClick={() => {
-                      const ref = c.panelRefs.find(r => r.imageIndex > 0) || c.panelRefs[0];
-                      setSelectedPanel({ ...ref, controlIndex: c.index, name: c.name });
-                      panelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}>图中位置 ↗</button>}
-                    {c.evidence === "editorial" && (
-                      <small className="param-group">功能分组名称</small>
-                    )}
-                  </th>
-                  <td>
-                    <p>{c.description}</p>
-                    {c.adjustment && <p className="adjustment"><span>调节与听感</span>{c.adjustment}</p>}
-                    {c.range && (
-                      <small className="range">
-                        {number(c.range.minimum)} ～ {number(c.range.maximum)}{" "}
-                        {c.unit} · 默认 {number(c.range.default)} {c.unit}
-                      </small>
-                    )}
-                    {c.options?.length > 0 && (
-                      <details className="options">
-                        <summary>选项／特殊值（{c.options.length}）</summary>
-                        <ul>
-                          {c.options.map((o, j) => (
-                            <li key={j}>
-                              {o.label} <span>({number(o.value)})</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </details>
-                    )}
-                    <small className="parameter-basis">{c.explanationSource ? <a href={c.explanationSource} target="_blank" rel="noreferrer">{c.explanationBasis} ↗</a> : c.explanationBasis}</small>
-                  </td>
-                </tr>
+      {advanced && (
+        <div className="advanced-filters">
+          <label>
+            获取方式
+            <select
+              value={state.cost}
+              onChange={(e) => update({ cost: e.target.value })}
+            >
+              {costs.map((x) => (
+                <option key={x}>{x}</option>
               ))}
-            </tbody>
-          </table>
-          {!controls.length && (
-            <p className="no-param">无匹配参数。</p>
-          )}
-        </div>
-      ) : (
-        <div className="coverage-note">
-          <Info size={20} />
-          <div>
-            <strong>完整面板尚待核实</strong>
-            <p>
-              已收录官方名称、图片与简介，完整数字面板资料尚未取得。
-            </p>
-          </div>
+            </select>
+          </label>
+          <label>
+            资料完整度
+            <select
+              value={state.coverage}
+              onChange={(e) => update({ coverage: e.target.value })}
+            >
+              {["全部资料", "有面板说明", "可图文定位", "面板待核实"].map(
+                (x) => (
+                  <option key={x}>{x}</option>
+                ),
+              )}
+            </select>
+          </label>
+          <label className="check-field">
+            <input
+              type="checkbox"
+              checked={onlyFavorites}
+              onChange={(e) => setOnlyFavorites(e.target.checked)}
+            />
+            只看收藏（{favorites.length}）
+          </label>
+          <button className="text-button" onClick={clear}>
+            清除筛选
+          </button>
         </div>
       )}
-    </section>
+    </div>
   );
 }
-function Detail({ block, onBack }) {
-  const [copied, setCopied] = useState(false),
-    [copyFallback, setCopyFallback] = useState("");
-  const panel = useRef(null);
-  useEffect(() => {
-    setCopied(false);
-    setCopyFallback("");
-    panel.current?.scrollTo(0, 0);
-  }, [block?.id]);
-  if (!block)
-    return (
-      <main className="detail empty-detail">
-        <Search size={30} />
-        <h2>从左侧选择一个单块</h2>
-        <p>按名字、用途或旋钮搜索，再点开阅读。</p>
-      </main>
-    );
+
+function DeviceKeys({ navigate, confirm, back }) {
+  return (
+    <div className="device-keys">
+      <div className="dpad" aria-label="图鉴方向键">
+        <button
+          className="dpad-up"
+          onClick={() => navigate(-1)}
+          aria-label="上一个单块"
+        >
+          <ChevronUp />
+        </button>
+        <button className="dpad-left" onClick={back} aria-label="返回列表">
+          <ChevronLeft />
+        </button>
+        <i aria-hidden="true" />
+        <button
+          className="dpad-right"
+          onClick={confirm}
+          aria-label="查看当前单块"
+        >
+          <ChevronRight />
+        </button>
+        <button
+          className="dpad-down"
+          onClick={() => navigate(1)}
+          aria-label="下一个单块"
+        >
+          <ChevronDown />
+        </button>
+      </div>
+      <button className="hardware-key" onClick={confirm}>
+        <i aria-hidden="true" />
+        <span>A 确认</span>
+      </button>
+      <button className="hardware-key" onClick={back}>
+        <i aria-hidden="true" />
+        <span>B 返回</span>
+      </button>
+      <div className="speaker" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+        <i />
+      </div>
+    </div>
+  );
+}
+
+function Detail({
+  block,
+  onBack,
+  navigate,
+  favorite,
+  toggleFavorite,
+  storageNote,
+}) {
+  const [copied, setCopied] = useState(false);
+  const [fallback, setFallback] = useState("");
+  const copyTimer = useRef(null);
+  useEffect(() => () => clearTimeout(copyTimer.current), []);
   async function share() {
     const url =
       location.href.split("#")[0] + "#block=" + encodeURIComponent(block.id);
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2200);
+      clearTimeout(copyTimer.current);
+      copyTimer.current = setTimeout(() => setCopied(false), 2200);
     } catch {
-      setCopyFallback(url);
+      setFallback(url);
     }
   }
-  return (
-    <main ref={panel} className="detail" id="detail">
-      <button className="back-button" onClick={onBack}>
-        <ArrowLeft size={17} />
-        返回单块列表
-      </button>
-      <div className="breadcrumb">
-        全部单块 <ChevronRight size={12} /> {block.category}{" "}
-        <ChevronRight size={12} /> {block.subCategory || block.origin}
-      </div>
-      <div className="detail-heading">
-        <h1>{block.name}</h1>
-        <button className="secondary share" onClick={share} aria-label={copied ? '已复制' : '复制链接'}>
-          {copied ? <Check size={16} /> : <Link size={16} />}
-          <span>{copied ? "已复制" : "复制链接"}</span>
+  if (!block)
+    return (
+      <main className="lcd detail-screen empty">
+        <Search size={40} />
+        <h1>暂无匹配条目</h1>
+        <p>修改左侧筛选后再试试。</p>
+        <button className="lcd-button mobile-back" onClick={onBack}>
+          返回列表
         </button>
+      </main>
+    );
+  return (
+    <main className="lcd detail-screen" id="detail">
+      <div className="detail-scroll">
+        <button className="mobile-back text-button" onClick={onBack}>
+          <ArrowLeft size={18} />
+          返回列表
+        </button>
+        <div className="index-line">
+          <span>No.{dexNumbers.get(block.id)}</span>
+          <span className="signal" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </span>
+        </div>
+        <h1 className="block-title">{block.name}</h1>
+        <div className="type-labels">
+          <span>{block.subCategory || block.category}</span>
+          <span>
+            {block.origin === "Marketplace"
+              ? "扩展"
+              : block.origin === "Guitar Essentials"
+                ? "特别版"
+                : block.origin}
+          </span>
+        </div>
+        <div className="dex-entry">{dexDescription(block)}</div>
+        <PanelGuide block={block} />
+        <details className="provenance">
+          <summary>资料与版本</summary>
+          <div className="technical-copy">
+            <p>
+              {block.vendor} · {block.cost}
+              {block.price ? ` · ${block.price}（采集时标价）` : ""}
+            </p>
+            {block.aliases.length > 0 && (
+              <p>别名：{block.aliases.join("、")}</p>
+            )}
+            <p>{block.description}</p>
+            {block.setup && (
+              <p>
+                <strong>调节顺序：</strong>
+                {block.setup}
+              </p>
+            )}
+            <p>{block.note}</p>
+            <div className="source-links">
+              {block.sources.map((s) => (
+                <SourceLink key={s.url} url={s.url}>
+                  {s.label}
+                </SourceLink>
+              ))}
+            </div>
+            <p>
+              清单 {data.updated} · 说明修订{" "}
+              {data.contentUpdated || data.updated} ·{" "}
+              {block.version
+                ? `插件 ${block.version}`
+                : `KosmOS ${data.firmware}`}
+            </p>
+            <p>
+              像素图由原图缩色生成，仅作列表辨识；右侧使用未处理原图。图片与品牌归各权利人所有。
+            </p>
+          </div>
+        </details>
       </div>
-      <div className="subtitle">
-        {block.vendor}
-        <i /> {block.origin}
-        <i /> {block.cost}
-        {block.origin === "Marketplace" && block.cost === "付费" && (
-          <span className="price"> · {block.price}*</span>
-        )}
-      </div>
-      {copyFallback && (
+      {fallback && (
         <label className="copy-fallback">
-          复制以下链接：
-          <input
-            readOnly
-            value={copyFallback}
-            onFocus={(e) => e.target.select()}
-          />
+          复制单块链接
+          <input readOnly value={fallback} onFocus={(e) => e.target.select()} />
         </label>
       )}
-      <div className="intro">
-        <ImageGallery block={block} />
-        <section>
-          <h2>音色与用途</h2>
-          <p>{block.description}</p>
-          {block.aliases.length > 0 && (
-            <p className="aliases">别名：{block.aliases.join("、")}</p>
-          )}
-          <div className="evidence">
-            <span
-              className={
-                "status-dot " + (!block.controls.length ? "pending" : "")
-              }
-            />
-            {block.evidence}
-          </div>
-        </section>
-      </div>
-      {block.setup && <section className="setup-note"><h2>调节顺序 <small>使用参考</small></h2><p>{block.setup}</p></section>}
-      <ParameterTable key={block.id} block={block} />
-      <section className="provenance">
-        <h2>资料与版本</h2>
-        <p>{block.note}</p>
-        <div className="source-links">
-          {block.sources.map((s) => (
-            <SourceLink key={s.url} url={s.url}>
-              {s.label}
-            </SourceLink>
-          ))}
-        </div>
-        <small>
-          清单：{data.updated} · 说明修订：{data.contentUpdated || data.updated}
-          {block.version
-            ? " · 插件 " + block.version
-            : " · 原厂清单 KosmOS " + data.firmware}
-          。图片与品牌归各权利人所有，仅用于学习、辨识与资料引用。
-        </small>
-        {block.cost === "付费" && (
-          <small>
-            *
-            价格为采集时标价，仅帮助区分付费内容；币种、税费、活动与实际授权以商店为准。
-          </small>
-        )}
-      </section>
-      <footer>非官方中文参考 · 不含设备控制功能</footer>
+      {storageNote && (
+        <p className="storage-note" role="status">
+          {storageNote}
+        </p>
+      )}
+      <nav className="detail-actions" aria-label="图鉴操作">
+        <button onClick={() => navigate(-1)}>上一单块</button>
+        <button onClick={toggleFavorite} aria-pressed={favorite}>
+          <Heart size={21} fill={favorite ? "currentColor" : "none"} />
+          {favorite ? "已收藏" : "收藏"}
+        </button>
+        <button onClick={share}>
+          {copied ? <Check size={21} /> : <Share2 size={21} />}
+          <span aria-live="polite">{copied ? "已复制" : "分享"}</span>
+        </button>
+        <button onClick={() => navigate(1)}>下一单块</button>
+      </nav>
     </main>
   );
 }
+
 function About({ close }) {
-  const dialog = useRef(null);
-  useEffect(() => {
-    const previous = document.activeElement;
-    const first = dialog.current?.querySelector('button');
-    first?.focus();
-    const trap = (event) => {
-      if (event.key !== 'Tab') return;
-      const items = [...dialog.current.querySelectorAll('button, a[href]')];
-      if (event.shiftKey && document.activeElement === items[0]) {
-        event.preventDefault(); items.at(-1)?.focus();
-      } else if (!event.shiftKey && document.activeElement === items.at(-1)) {
-        event.preventDefault(); items[0]?.focus();
-      }
-    };
-    document.addEventListener('keydown', trap);
-    return () => { document.removeEventListener('keydown', trap); previous?.focus(); };
-  }, []);
   return (
-    <div className="about-shade" onClick={close}>
-      <section
-        className="about"
-        ref={dialog}
-        role="dialog"
-        aria-modal="true"
-        aria-label="收录范围"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button className="about-close" onClick={close} aria-label="关闭说明">
-          <X size={20} />
-        </button>
-        <h2>收录范围</h2>
+    <Modal label="收录说明" close={close}>
+      <div className="about-copy technical-copy">
+        <h2>收录说明</h2>
         <p>
-          截至 {data.updated}，按官方 KosmOS {data.firmware} 清单收录{" "}
-          <strong>121 个原厂条目</strong>，以及官方 Marketplace 的{" "}
-          <strong>97 个扩展</strong>。不同箱体／艺术家 IR
-          分别算条目；Mono／Stereo 版本按官方清单合并介绍，不重复计数。
+          截至 {data.updated}，共 121 个原厂条目、97 个 Marketplace 扩展与 15 个
+          Guitar Essentials 特别版参考条目。不同箱体／艺术家 IR
+          分别计数；条目数不等于独立算法数，也不代表全部已解锁。
         </p>
         <p>
-          另附 <strong>15 个 Guitar Essentials 特别版</strong>
-          条目。这些只有已确认的图片和用途，完整面板待核实，也不代表普通设备自动获得授权。
+          中文介绍与调节建议是辅助参考，不是厂商认证译本或实机试听结论。资料、范围及版本差异在各单块的“资料与版本”中保留；未核实的参数不猜测。
         </p>
         <p>
-          扩展旋钮的范围、默认值、选项来自官方 MOD
-          插件服务。原厂参数名参考已安装的官方 Suite
-          和社区面板记录；无法确认的数值不填写。中文说明是辅助解释，不是厂商认证译本，也不代替实际试听。
+          面板热点只标注已有完整英文标签匹配的控件。像素缩略图是原图的低色数版本，右侧始终显示原始图片；外观图不代表完整参数页。
         </p>
         <p>
-          名称变化可通过旧名搜索。原厂单块图片取自 Darkglass Suite
-          6.10.0，扩展图片取自官方商店；未分配独立封面的艺术家 IR
-          使用系列共用图并注明。网站不提供付费插件文件，不收集你的设备数据。
+          收藏只保存于当前浏览器。网站不控制设备，不收集设备数据，不分发付费插件。红色图鉴界面为致敬设计，与
+          Darkglass、宝可梦及相关权利人无官方关联。
         </p>
         <p>
-          面板定位按图片中的完整英文标签匹配，不按相似含义猜测位置。外观图不代表完整参数页。
-          功能说明附资料依据；调节与听感为编辑参考，尚未核实的版本差异保留注明。
+          界面字体使用 OFL 授权的 Fusion
+          Pixel。图片、品牌与原始面板属于各自权利人。
         </p>
-        <p>
-          <SourceLink url={REPO}>查看源码／提交纠错</SourceLink>
-        </p>
-        <button className="secondary" onClick={close}>
-          知道了
-        </button>
-      </section>
-    </div>
+        <SourceLink url={REPO}>GitHub／提交纠错</SourceLink>
+      </div>
+    </Modal>
   );
 }
+
 function App() {
-  const initial = readRoute(location.hash),
-    [state, setState] = useState({
-      ...initial,
-      id: initial.id || data.blocks[0].id,
-    }),
-    [mobileDetail, setMobileDetail] = useState(!!initial.id),
-    [filtersOpen, setFiltersOpen] = useState(false),
-    [about, setAbout] = useState(false);
-  const search = useRef(null);
-  const blocks = useMemo(() => filterBlocks(data.blocks, state), [state]);
+  const [state, setState] = useState({
+    ...initial,
+    id: initial.id || data.blocks[0].id,
+  });
+  const [mobileDetail, setMobileDetail] = useState(!!initial.id);
+  const [favorites, setFavorites] = useState(() => {
+    try {
+      return readFavorites(localStorage);
+    } catch {
+      return [];
+    }
+  });
+  const [onlyFavorites, setOnlyFavorites] = useState(false);
+  const [about, setAbout] = useState(false);
+  const [storageNote, setStorageNote] = useState("");
+  const searchRef = useRef(null);
+  const blocks = useMemo(
+    () =>
+      filterBlocks(data.blocks, state).filter(
+        (b) => !onlyFavorites || favorites.includes(b.id),
+      ),
+    [state, favorites, onlyFavorites],
+  );
   const selected = blocks.find((b) => b.id === state.id) || blocks[0];
-  function update(p) {
-    setState((s) => ({ ...s, ...p }));
-    if (!("id" in p)) setMobileDetail(false);
+  const update = (patch) => setState((s) => ({ ...s, ...patch }));
+  const choose = (id) => {
+    update({ id });
+    setMobileDetail(true);
+  };
+  const navigate = (direction) => {
+    const b = adjacentBlock(blocks, selected?.id, direction);
+    if (b) update({ id: b.id });
+  };
+  const back = () => {
+    setMobileDetail(false);
+    requestAnimationFrame(() =>
+      searchRef.current?.focus({ preventScroll: true }),
+    );
+  };
+  useEffect(() => {
+    if (matchMedia("(max-width: 760px)").matches)
+      window.scrollTo({ top: 0, behavior: "instant" });
+  }, [mobileDetail, selected?.id]);
+  function toggleFavorite() {
+    if (!selected) return;
+    const next = favorites.includes(selected.id)
+      ? favorites.filter((id) => id !== selected.id)
+      : [...favorites, selected.id];
+    setFavorites(next);
+    let saved = false;
+    try {
+      saved = storeFavorites(localStorage, next);
+    } catch {
+      /* Browser may deny storage access. */
+    }
+    setStorageNote(saved ? "" : "浏览器未允许保存，收藏仅在本次页面有效。");
   }
   useEffect(() => {
-    history.replaceState(null, "", writeRoute(state));
-  }, [state]);
+    history.replaceState(
+      null,
+      "",
+      writeRoute({ ...state, id: selected?.id || "" }),
+    );
+  }, [state, selected?.id]);
+  useEffect(() => {
+    document.title = selected
+      ? selected.name + " · Anagram 单块图鉴"
+      : "Anagram 单块图鉴";
+  }, [selected]);
   useEffect(() => {
     const route = () => {
-      const s = readRoute(location.hash);
-      setState(s);
-      setMobileDetail(!!s.id);
+      const next = readRoute(location.hash);
+      setState(next);
+      setOnlyFavorites(false);
+      setMobileDetail(!!next.id);
     };
+    addEventListener("hashchange", route);
+    return () => removeEventListener("hashchange", route);
+  }, []);
+  useEffect(() => {
     const key = (e) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        search.current?.focus();
+        setMobileDetail(false);
+        searchRef.current?.focus();
+        return;
       }
       if (e.key === "Escape") {
         setAbout(false);
-        setFiltersOpen(false);
+        return;
+      }
+      if (
+        document.querySelector('[role="dialog"]') ||
+        /INPUT|SELECT|TEXTAREA|BUTTON|SUMMARY/.test(e.target.tagName)
+      )
+        return;
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(e.key === "ArrowDown" ? 1 : -1);
       }
     };
-    addEventListener("hashchange", route);
     addEventListener("keydown", key);
-    return () => {
-      removeEventListener("hashchange", route);
-      removeEventListener("keydown", key);
-    };
-  }, []);
-  useEffect(() => {
-    document.title = selected
-      ? selected.name + " · Anagram 中文单块图鉴"
-      : "Anagram 单块图鉴";
-  }, [selected]);
-  const reset = () =>
-    update({
-      query: "",
-      category: "全部单块",
-      origin: "全部来源",
-      cost: "全部",
-      coverage: "全部资料",
-    });
+    return () => removeEventListener("keydown", key);
+  }, [blocks, selected?.id]);
   return (
-    <div className={"app " + (mobileDetail ? "show-detail" : "")}>
-      <header>
-        <a
-          className="brand"
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            reset();
-            setMobileDetail(false);
-          }}
-        >
-          Anagram 单块图鉴
-        </a>
-        <span className="header-subtitle">中文操作指南</span>
-        <div className="header-links">
-          <button onClick={() => setAbout(true)}>收录说明</button>
-          <SourceLink url={REPO}>GitHub</SourceLink>
-        </div>
-      </header>
-      <div className="search-row">
-        <div className="search-box">
-          <Search size={21} />
-          <input
-            ref={search}
-            type="search"
-            placeholder="搜索单块、旋钮或音色"
-            aria-label="搜索单块、旋钮或音色"
-            value={state.query}
-            onChange={(e) => update({ query: e.target.value })}
-          />
-          {state.query ? (
-            <button aria-label="清空搜索" onClick={() => update({ query: "" })}>
-              <X size={18} />
-            </button>
-          ) : (
-            <span className="search-hint">
-              例如：Microtubes、Blend、低频 <kbd>⌘ K</kbd>
-            </span>
-          )}
-        </div>
-        <button
-          className="mobile-filter secondary"
-          aria-expanded={filtersOpen}
-          onClick={() => setFiltersOpen(!filtersOpen)}
-        >
-          <SlidersHorizontal size={18} />
-          筛选
-        </button>
-      </div>
-      <div className="workspace">
-        <Filters
+    <div className={"pokedex" + (mobileDetail ? " show-detail" : "")}>
+      <section className="shell left-shell" aria-label="图鉴目录">
+        <header className="device-header">
+          <div className="sensor" aria-hidden="true">
+            <i />
+          </div>
+          <div className="indicator-lights" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </div>
+          <div className="header-seam" aria-hidden="true" />
+          <a
+            className="brand"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              update({ ...resetFilters, id: data.blocks[0].id });
+              setOnlyFavorites(false);
+              back();
+            }}
+          >
+            ANAGRAM 单块图鉴
+          </a>
+        </header>
+        <Directory
           state={state}
-          change={update}
-          blocks={data.blocks}
-          mobileOpen={filtersOpen}
-        />
-        <BlockList
+          update={update}
           blocks={blocks}
-          selected={selected?.id}
-          reset={reset}
-          onSelect={(id) => {
-            update({ id });
-            setMobileDetail(true);
-            setFiltersOpen(false);
-          }}
+          selected={selected}
+          choose={choose}
+          searchRef={searchRef}
+          favorites={favorites}
+          onlyFavorites={onlyFavorites}
+          setOnlyFavorites={setOnlyFavorites}
         />
-        <Detail block={selected} onBack={() => setMobileDetail(false)} />
+        <DeviceKeys
+          navigate={navigate}
+          confirm={() => selected && choose(selected.id)}
+          back={back}
+        />
+        <button
+          className="case-screw"
+          aria-label="收录说明"
+          title="收录说明"
+          onClick={() => setAbout(true)}
+        >
+          +
+        </button>
+      </section>
+      <div className="hinge" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+        <i />
       </div>
-      <div className="sr-only" aria-live="polite">
-        找到 {blocks.length} 个单块
-      </div>
+      <section className="shell right-shell" aria-label="单块详情">
+        <Detail
+          key={selected?.id || "empty"}
+          block={selected}
+          onBack={back}
+          navigate={navigate}
+          favorite={favorites.includes(selected?.id)}
+          toggleFavorite={toggleFavorite}
+          storageNote={storageNote}
+        />
+        <footer className="case-footer">
+          <span className="footer-vents" aria-hidden="true" />
+          <button onClick={() => setAbout(true)}>
+            非官方中文图鉴 · 参数以原始资料为准
+          </button>
+          <span className="footer-vents" aria-hidden="true" />
+        </footer>
+      </section>
       {about && <About close={() => setAbout(false)} />}
     </div>
   );
