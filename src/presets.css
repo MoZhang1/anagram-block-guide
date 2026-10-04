@@ -46,6 +46,23 @@
 .preset-parameters dd p { margin: 7px 0 0; }
 .preset-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .preset-share-input { display: block; width: 100%; padding: 10px; font: 13px system-ui; }
+@media (min-width: 761px) and (max-height: 820px) {
+  .section-tabs { margin-bottom: 7px; }
+  .section-tabs button { min-height: 36px; padding: 4px; font-size: 19px; }
+  .preset-directory.directory-screen { gap: 6px; }
+  .preset-snapshot { margin: 0; font-size: 11px; }
+  .preset-directory .preset-row { min-height: 61px; font-size: 19px; padding-block: 7px; grid-template-columns: 36px 34px minmax(0, 1fr) 16px; }
+  .preset-directory .pixel-sprite { width: 36px; height: 36px; }
+  .preset-row .dex-name small { font-size: 11px; margin-top: 2px; }
+  .preset-detail .block-title { margin-bottom: 8px; }
+  .preset-detail .preset-subtitle { font-size: 20px; margin-bottom: 8px; }
+  .preset-detail .dex-entry { font-size: 18px; }
+  .preset-detail .dex-entry small { margin-top: 6px; }
+  .preset-chain { padding-top: 14px; }
+  .preset-chain h2 { font-size: 24px; margin-bottom: 7px; }
+  .preset-chain > .technical-copy { font-size: 13px; }
+  .chain-lane { margin-top: 10px; }
+}
 @media (max-width: 1000px) { .section-tabs { margin-inline: 14px; } .section-tabs button { font-size: 20px; } }
 @media (max-width: 760px) {
   .section-tabs { margin: 0 14px 10px; }
