@@ -1,0 +1,59 @@
+.section-tabs { display: flex; flex: none; gap: 8px; margin: 0 22px 10px; }
+.section-tabs button { flex: 1; min-height: 44px; padding: 8px 5px; border: 3px solid var(--line); background: var(--lcd-light); color: var(--ink); font: 22px/1.3 DexPixel, sans-serif; box-shadow: 2px 2px 0 var(--dark-red); }
+.section-tabs button[aria-pressed="true"] { background: var(--ink); color: var(--lcd-light); }
+.preset-snapshot { margin: 4px 2px 10px; font: 12px/1.6 system-ui, sans-serif; }
+.preset-row .dex-name { white-space: normal; overflow-wrap: anywhere; line-height: 1.35; }
+.preset-row .dex-name small { display: block; font: 12px/1.6 system-ui, sans-serif; margin-top: 4px; }
+.preset-directory .preset-row { min-height: 82px; grid-template-columns: 48px 40px minmax(0, 1fr) 20px; }
+.preset-directory .pixel-sprite { width: 48px; height: 48px; }
+.preset-subtitle { font-size: 23px; line-height: 1.5; margin: 0 0 15px; }
+.preset-detail h2 { margin: 0 0 12px; font-size: 27px; line-height: 1.4; }
+.preset-detail h3 { margin: 4px 0; font-size: 22px; line-height: 1.4; overflow-wrap: anywhere; }
+.preset-detail .technical-copy { font-size: 15px; line-height: 1.8; }
+.preset-detail .dex-entry small { display: block; margin-top: 12px; font-size: 12px; }
+.preset-chain, .preset-editorial, .preset-origin { padding: 22px 0; border-bottom: 2px solid var(--line); }
+.chain-lane { margin-top: 18px; }
+.chain-lane h3 { font-size: 20px; }
+.chain-lane ol { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 8px 0; }
+.chain-lane li { display: flex; align-items: center; gap: 7px; max-width: 100%; }
+.chain-arrow { flex: none; }
+.chain-node { text-align: left; border: 2px solid var(--line); background: var(--lcd-light); padding: 8px 10px; font: 17px/1.4 DexPixel, sans-serif; color: var(--ink); max-width: 195px; overflow-wrap: anywhere; }
+.chain-node small { display: block; font: 11px/1.6 system-ui, sans-serif; }
+.chain-node.bypassed { border-style: dashed; background: transparent; }
+.chain-note { display: flex; align-items: flex-start; gap: 8px; margin-top: 14px; }
+.chain-note svg { flex: none; margin-top: 5px; }
+.preset-origin dl { margin: 0; }
+.preset-origin dt { font-weight: 700; margin-top: 12px; }
+.preset-origin dd { margin: 4px 0 0; }
+.preset-settings-title { padding-top: 24px; }
+.preset-block { padding: 20px 0; border-bottom: 2px solid #8cab79; scroll-margin-top: 16px; }
+.preset-block-heading { display: flex; gap: 16px; align-items: center; }
+.preset-block-heading img { width: 80px; height: 90px; object-fit: contain; }
+.preset-block-heading > div { min-width: 0; }
+.preset-block > p { margin: 12px 0; }
+.preset-text-link { display: inline-flex; gap: 4px; align-items: center; font: 13px/1.6 system-ui, sans-serif; padding: 0; border: 0; background: none; color: var(--ink); text-decoration: underline; }
+.preset-files { background: #d9eac6; padding: 10px; overflow-wrap: anywhere; }
+.preset-files p { margin: 0; }
+.preset-files code { font: 12px/1.7 ui-monospace, monospace; }
+.preset-parameters { margin-top: 14px; }
+.preset-parameters summary { cursor: pointer; padding: 10px; border: 2px solid var(--line); font-size: 21px; background: #d9eac6; }
+.preset-parameters > p { margin-top: 12px; font-size: 12px; }
+.preset-parameters dl { font: 15px/1.8 system-ui, sans-serif; margin: 10px 0; }
+.preset-parameters dl > div { padding: 12px 0; border-bottom: 1px solid #9bb986; }
+.preset-parameters dt { display: flex; justify-content: space-between; gap: 20px; font-weight: 700; }
+.preset-parameters dt strong { flex: none; font-variant-numeric: tabular-nums; }
+.preset-parameters dd { margin: 4px 0 0; }
+.preset-parameters dd p { margin: 7px 0 0; }
+.preset-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.preset-share-input { display: block; width: 100%; padding: 10px; font: 13px system-ui; }
+@media (max-width: 1000px) { .section-tabs { margin-inline: 14px; } .section-tabs button { font-size: 20px; } }
+@media (max-width: 760px) {
+  .section-tabs { margin: 0 14px 10px; }
+  .section-tabs button { min-height: 44px; font-size: 22px; }
+  .preset-directory .primary-filters { grid-template-columns: 1fr; }
+  .preset-detail .block-title { font-size: 31px; }
+  .preset-subtitle { font-size: 21px; }
+  .preset-actions button { gap: 3px; padding: 6px 2px; font-size: 18px; }
+  .preset-block-heading img { width: 64px; height: 80px; }
+  .chain-node { max-width: 210px; }
+}

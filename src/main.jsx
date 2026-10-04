@@ -20,8 +20,6 @@ import {
   origins,
   costs,
   filterBlocks,
-  readRoute,
-  writeRoute,
 } from "./catalog.mjs";
 import {
   dexNumbers,
@@ -32,11 +30,14 @@ import {
 } from "./dex.mjs";
 import { PanelGuide, Modal, SourceLink } from "./PanelGuide.jsx";
 import { DexCover } from "./DexCover.jsx";
+import { SectionTabs, PresetDirectory, PresetDetail } from "./PresetGuide.jsx";
+import { presets, presetIds, filterPresets, readGuideRoute, writeGuideRoute } from "./presets.mjs";
 import { COVER_DURATION, initialCoverPhase, nextCoverPhase } from "./cover.mjs";
 import "./styles.css";
 
 const assetUrl = (path) => import.meta.env.BASE_URL + path;
-const initial = readRoute(location.hash);
+const initial = readGuideRoute(location.hash);
+const knownEntryIds = new Set([...dexNumbers.keys(), ...presetIds]);
 const resetFilters = {
   query: "",
   category: "全部单块",
@@ -210,7 +211,7 @@ function DeviceKeys({ navigate, confirm, back }) {
         <button
           className="dpad-up"
           onClick={() => navigate(-1)}
-          aria-label="上一个单块"
+          aria-label="上一个条目"
         >
           <ChevronUp />
         </button>
@@ -221,14 +222,14 @@ function DeviceKeys({ navigate, confirm, back }) {
         <button
           className="dpad-right"
           onClick={confirm}
-          aria-label="查看当前单块"
+          aria-label="查看当前条目"
         >
           <ChevronRight />
         </button>
         <button
           className="dpad-down"
           onClick={() => navigate(1)}
-          aria-label="下一个单块"
+          aria-label="下一个条目"
         >
           <ChevronDown />
         </button>
@@ -395,6 +396,7 @@ function About({ close }) {
         <p>
           面板热点只标注已有完整英文标签匹配的控件。像素缩略图是原图的低色数版本，右侧始终显示原始图片；外观图不代表完整参数页。
         </p>
+        <p>预设分区另收录 Darkglass Suite 6.11.0 随包的 36 条贝斯工厂预设，展示基础链路、旁通状态与参数。它不是当前设备读取结果，也不含 Guitar Essentials、社区预设和场景绑定。用途与调节建议属于编辑分析；歌曲或乐手出处未确认时明确标注。</p>
         <p>
           收藏只保存于当前浏览器。网站不控制设备，不收集设备数据，不分发付费插件。红色图鉴界面为致敬设计，与
           Darkglass、宝可梦及相关权利人无官方关联。
@@ -411,7 +413,7 @@ function About({ close }) {
 
 function App() {
   const [phase, setPhase] = useState(() =>
-    initialCoverPhase(initial, dexNumbers),
+    initial.view === 'presets' ? 'open' : initialCoverPhase(initial, knownEntryIds),
   );
   const phaseRef = useRef(phase);
   const transitionTimer = useRef(null);
@@ -420,7 +422,7 @@ function App() {
   const focusAfterTransition = useRef(false);
   const [state, setState] = useState({
     ...initial,
-    id: initial.id || data.blocks[0].id,
+    id: initial.id || (initial.view === 'presets' ? presets[0].id : data.blocks[0].id),
   });
   const [mobileDetail, setMobileDetail] = useState(!!initial.id);
   const [favorites, setFavorites] = useState(() => {
@@ -474,14 +476,27 @@ function App() {
       ),
     [state, favorites, onlyFavorites],
   );
-  const selected = blocks.find((b) => b.id === state.id) || blocks[0];
+  const isPresets = state.view === 'presets';
+  const filteredPresets = useMemo(() => filterPresets(state), [state]);
+  const entries = isPresets ? filteredPresets : blocks;
+  const selected = entries.find((b) => b.id === state.id) || entries[0];
   const update = (patch) => setState((s) => ({ ...s, ...patch }));
+  const changeSection = (view) => {
+    update({ ...resetFilters, view, id: view === 'presets' ? presets[0].id : data.blocks[0].id, presetCategory: '全部用途', topology: '全部链路' });
+    setOnlyFavorites(false);
+    setMobileDetail(false);
+  };
+  const openBlock = (id) => {
+    update({ ...resetFilters, view: 'blocks', id });
+    setOnlyFavorites(false);
+    setMobileDetail(true);
+  };
   const choose = (id) => {
     update({ id });
     setMobileDetail(true);
   };
   const navigate = (direction) => {
-    const b = adjacentBlock(blocks, selected?.id, direction);
+    const b = adjacentBlock(entries, selected?.id, direction);
     if (b) update({ id: b.id });
   };
   const back = () => {
@@ -513,23 +528,23 @@ function App() {
     history.replaceState(
       null,
       "",
-      writeRoute({ ...state, id: selected?.id || "" }),
+      writeGuideRoute({ ...state, id: selected?.id || "" }),
     );
   }, [state, selected?.id, phase]);
   useEffect(() => {
     document.title =
       phase === "open" && selected
-        ? selected.name + " · Anagram 单块图鉴"
+        ? selected.name + (isPresets ? " · Anagram 预设效果链" : " · Anagram 单块图鉴")
         : "Anagram 单块图鉴";
-  }, [selected, phase]);
+  }, [selected, phase, isPresets]);
   useEffect(() => {
     const route = () => {
-      const next = readRoute(location.hash);
+      const next = readGuideRoute(location.hash);
       setState(next);
       setOnlyFavorites(false);
       setMobileDetail(!!next.id);
       clearTimeout(transitionTimer.current);
-      const nextPhase = initialCoverPhase(next, dexNumbers);
+      const nextPhase = next.view === 'presets' ? 'open' : initialCoverPhase(next, knownEntryIds);
       phaseRef.current = nextPhase;
       setPhase(nextPhase);
     };
@@ -561,7 +576,7 @@ function App() {
     };
     addEventListener("keydown", key);
     return () => removeEventListener("keydown", key);
-  }, [blocks, selected?.id, phase]);
+  }, [entries, selected?.id, phase]);
   return (
     <div
       className="dex-experience"
@@ -597,7 +612,7 @@ function App() {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                update({ ...resetFilters, id: data.blocks[0].id });
+                update({ ...resetFilters, view: 'blocks', id: data.blocks[0].id });
                 setOnlyFavorites(false);
                 back();
               }}
@@ -605,7 +620,8 @@ function App() {
               ANAGRAM 单块图鉴
             </a>
           </header>
-          <Directory
+          <SectionTabs view={state.view} change={changeSection} />
+          {isPresets ? <PresetDirectory state={state} update={update} items={filteredPresets} selected={selected} choose={choose} searchRef={searchRef} /> : <Directory
             state={state}
             update={update}
             blocks={blocks}
@@ -615,7 +631,7 @@ function App() {
             favorites={favorites}
             onlyFavorites={onlyFavorites}
             setOnlyFavorites={setOnlyFavorites}
-          />
+          />}
           <DeviceKeys
             navigate={navigate}
             confirm={() => selected && choose(selected.id)}
@@ -636,8 +652,8 @@ function App() {
           <i />
           <i />
         </div>
-        <section className="shell right-shell" aria-label="单块详情">
-          <Detail
+        <section className="shell right-shell" aria-label={isPresets ? '预设详情' : '单块详情'}>
+          {isPresets ? <PresetDetail key={selected?.id || 'empty-preset'} preset={selected} onBack={back} navigate={navigate} openBlock={openBlock} /> : <Detail
             key={selected?.id || "empty"}
             block={selected}
             onBack={back}
@@ -645,7 +661,7 @@ function App() {
             favorite={favorites.includes(selected?.id)}
             toggleFavorite={toggleFavorite}
             storageNote={storageNote}
-          />
+          />}
           <footer className="case-footer">
             <span className="footer-vents" aria-hidden="true" />
             <button onClick={() => setAbout(true)}>

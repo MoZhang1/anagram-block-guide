@@ -51,7 +51,7 @@ export function DexCover({ phase, open, buttonRef, count }) {
                     : "打开图鉴"}
               </span>
             </button>
-            <p className="cover-count">收录 {count} 个条目</p>
+            <p className="cover-count">{count} 个单块 · 36 条预设</p>
             <div className="cover-vents" aria-hidden="true">
               <i />
               <i />
